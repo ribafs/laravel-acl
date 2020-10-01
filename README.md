@@ -41,6 +41,44 @@ Este pacote vem com um command que pode fazer isso (copiar os dois arquivos acim
 php artisan copy:files
 ```
 
+## Configurations
+
+### Registrar o middleware
+
+Editar o app/Http/Kernel.php e adicionar ao array $routeMiddleware = [
+```bash
+        'role' => \Illuminate\Auth\Middleware\RoleMiddleware::class,
+```
+
+### Registrar o provider
+
+Editar o config\app.php e adicione ao array 'providers' => [
+```bash
+        App\Providers\PermissionsServiceProvider::class,
+```
+
+### Edite o model app/Models/User.php e adicione
+```php
+use App\Traits\HasPermissionsTrait;
+
+class User extends Authenticatable
+{
+    use HasPermissionsTrait;
+```    
+
+### Configurar o uso do bootstrap no laravel 9
+
+Adicionar ao app/Providers/AppServiceProvider.php
+
+use Illuminate\Pagination\Paginator;
+
+    public function boot()
+    {
+        Paginator::useBootstrap();
+    }
+
+```
+
 ## Executando
 
 Após adicionar seu CRUD, execute e teste o ACL no controle do acesso do seu aplicativo.
@@ -55,43 +93,6 @@ Então clicamos em login e acessamos com, exemplo:
 - 123456
 
 
-## Configurations
-
-## Registrar o middleware
-
-Editar o app/Http/Kernel.php e adicionar ao array $routeMiddleware = [
-```bash
-        'role' => \Illuminate\Auth\Middleware\RoleMiddleware::class,
-```
-
-## Registrar o provider
-
-Editar o config\app.php e adicione ao array 'providers' => [
-```bash
-        App\Providers\PermissionsServiceProvider::class,
-```
-
-## Edite o model app/Models/User.php e adicione
-```php
-use App\Traits\HasPermissionsTrait;
-
-class User extends Authenticatable
-{
-    use HasPermissionsTrait;
-```    
-
-## Configurar o uso do bootstrap no laravel 9
-
-Adicionar ao app/Providers/AppServiceProvider.php
-
-use Illuminate\Pagination\Paginator;
-
-    public function boot()
-    {
-        Paginator::useBootstrap();
-    }
-
-```
 ## Adicionando novos usuários
 
 Lembrando que deve evitar inserir usuários manualmente.
