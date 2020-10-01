@@ -20,9 +20,7 @@ class LaravelAclServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->commands(
-            //'Ribafs\LaravelAcl\Commands\CopyFilesCommand',
-        );
+        //$this->commands();
     }
 
     /**
