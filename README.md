@@ -29,13 +29,18 @@ composer require ribafs/laravel-acl
 php artisan vendor:publish --provider="Ribafs\LaravelAcl\LaravelAclServiceProvider"
 ```
 Agora todos os arquivos do pacote já estão em seu aplicativo: migrations, seeders, Models, middleware, provider, etc
-Como este pacote não sobrescreve arquivos existestes, então precisa copiar dois arquivos:
 
-vendor/ribafs/laravel-acl/acl/seeders/DatabaseSeeder.php para sua database/seeders (irá sobrescrever o seu, então veja antes e adapte, se for o caso)
+## Copiar alguns arquivos existentes
+Como este pacote não sobrescreve arquivos existestes, então você precisará executar o comando copy:files (veja abaixo) para copiar sobrescrevendo os arquivos abaixo:
 
-vendor/ribafs/laravel-acl/acl/web.php para o routes
+- DatabaseSeeder.php
+- routes/web.php
+- views/welcome.blade.php
+- views/layouts/app.blade.php
 
-Este pacote vem com um command que pode fazer isso (copiar os dois arquivos acima para seu aplicativo sobrescrevendo os existentes). Execute
+O comando fará uma cópia de cada arquivo sobrescrito, adicionando BAK ao seu nome. Exemplo: routes/webBAK.php
+
+### Executar
 ```bash
 php artisan copy:files
 ```

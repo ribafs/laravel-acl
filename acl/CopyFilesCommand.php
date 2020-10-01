@@ -27,10 +27,28 @@ class CopyFilesCommand extends Command
      */
     public function handle()
     {
-        File::copy(base_path('vendor/ribafs/laravel-acl/acl/seeders/DatabaseSeeder.php'), base_path('database/seeders/DatabaseSeeder.php'));
-        File::copy(base_path('vendor/ribafs/laravel-acl/acl/web.php'), base_path('routes/web.php'));
+        $seeder = base_path('database/seeders/DatabaseSeeder.php');
+        if(File::exists($seeder)){
+            File::copy($seeder), base_path('database/seeders/DatabaseSeederBAK.php'));
+            File::copy(base_path('vendor/ribafs/laravel-acl/acl/seeders/DatabaseSeeder.php'), base_path('database/seeders/DatabaseSeeder.php'));
+        }
+        $route = base_path('routes/web.php');
+        if(File::exists($route)){
+            File::copy($route), base_path('routes/webBAK.php');
+            File::copy(base_path('vendor/ribafs/laravel-acl/acl/web.php'), base_path('routes/web.php'));
+        }
+        $wel = base_path('resources/views/welcome.blade.php');
+        if(File::exists($wel)){
+            File::copy($wel), base_path('resources/views/welcome.bladeBAK.php');
+            File::copy(base_path('vendor/ribafs/laravel-acl/acl/views/welcome.blade.php'), base_path('resources/views/welcome.blade.php'));
+        }
+        $app = base_path('resources/views/welcome.blade.php')
+        if(File::exists($app)){
+            File::copy($wel), base_path('resources/views/welcome.bladeBAK.php');
+            File::copy(base_path('vendor/ribafs/laravel-acl/acl/views/layouts/app.blade.php'), base_path('resources/views/layouts/app.blade.php'));
+        }
 
         $this->info(PHP_EOL);
-        $this->info('Routes e DatabaseSeeder copiados com sucesso.'.PHP_EOL);
+        $this->info('Arquivos copiados com sucesso.'.PHP_EOL);
     }
 }
