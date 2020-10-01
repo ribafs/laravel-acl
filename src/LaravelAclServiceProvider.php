@@ -100,6 +100,11 @@ class LaravelAclServiceProvider extends ServiceProvider
             __DIR__.'/../acl/web.php' => base_path('routes/web.php'),
         ], 'laravel-acl.web');
 
+        // Publishing command.
+        $this->publishes([
+            __DIR__.'/../src/Commands/CopyFilesCommand.php' => app_path('Console/Commands/CopyFilesCommand.php'),
+        ], 'laravel-acl.web');
+
         // Registering package commands.
         $this->commands($this->commands);
     }
