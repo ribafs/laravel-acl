@@ -1,6 +1,4 @@
-# ACL to Laravel 8 - package
-Implementando ACL em aplicativos com Laravel 8
-
+# Pacote com implementação de ACL no Laravel 8
 Usando users, roles, permissions, trait, middleware, provider, etc
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
@@ -21,10 +19,11 @@ cd acl
 .env
 
 
-## Instalar o pacote
+## Instalar o laravel-acl
 ```bash
 composer require ribafs/laravel-acl
 ```
+
 ## Publicar
 ```bash
 php artisan vendor:publish --provider="Ribafs\LaravelAcl\LaravelAclServiceProvider"
@@ -41,7 +40,7 @@ Este pacote vem com um command que pode fazer isso (copiar os dois arquivos acim
 php artisan copy:files
 ```
 
-## Configurations
+## Configurar
 
 ### Registrar o middleware
 
@@ -57,16 +56,17 @@ Editar o config\app.php e adicione ao array 'providers' => [
         App\Providers\PermissionsServiceProvider::class,
 ```
 
-### Edite o model app/Models/User.php e adicione
+### Editar o model app/Models/User.php e atualizar
+
 ```php
 use App\Traits\HasPermissionsTrait;
 
 class User extends Authenticatable
 {
     use HasPermissionsTrait;
-```    
+```
 
-### Configurar o uso do bootstrap no laravel 9
+### Configurar o uso do bootstrap no laravel 8
 
 Adicionar ao app/Providers/AppServiceProvider.php
 ```php
@@ -82,9 +82,10 @@ use Illuminate\Pagination\Paginator;
 Mudar para
 ```php
             $table->increments('id');
-```            
+```
 
-## Executando
+
+## Executar
 
 Após adicionar seu CRUD, execute e teste o ACL no controle do acesso do seu aplicativo.
 ```bash
@@ -92,13 +93,15 @@ php artisan migrate --seed
 php artisan serve
 localhost:8000/login
 ```
-Então clicamos em login e acessamos com, exemplo:
+Use como exemplo:
 
 - super@gmail.com
 - 123456
 
+Depois teste com os demais: admin, manager e user
 
-## Adicionando novos usuários
+
+## Adicionar novos usuários
 
 Lembrando que deve evitar inserir usuários manualmente.
 Para isso foi criado um command, que insere o usuário e anexa uma role e uma permission para o mesmo. Por enquanto tem uma limitação. Anexa somente uma role e uma permissão.
@@ -106,7 +109,7 @@ Para isso foi criado um command, que insere o usuário e anexa uma role e uma pe
 php artisan add:user
 ```
 
-# Testando o pacote após o login
+# Testar após o login
 
 ## Acessar com super@gmail.com e 123456
 
@@ -161,16 +164,19 @@ http://localhost:8000/admin/clients/1/edit
 http://localhost:8000/admin/clients/show/1
 
 
-## Customização do aplicativo com ACL
+## Customizar este aplicativo
 
-O CRUD clients foi criado usando o pacote ribafs/crud-generator-acl
+Os CRUDs existentes neste pacote foram criados usando o pacote ribafs/crud-generator-acl
 
 https://github.com/ribafs/crud-generator-acl
 
-Ele facilita muito nosso trabalho, pois é especializado nesta implementação. Já vem com muitos e bons recursos. Verifique no site e experimente.
+Este pacote foi criado partindo do ribafs/crud-generator. O c ribafs/crud-generator é um fork do excelente
+https://github.com/appzcoder/crud-generator
+
+Esse pacote facilita muito nosso trabalho, pois foi criado para complementar o trabalho do pacote laravel-acl. Já vem com muitos e bons recursos. Verifique no site e experimente.
 
 
-## Instalar e publicar o gerador
+## Instalar e publicar o crud-generator-acl
 ```bash
 composer require ribafs/crud-generator-acl
 
@@ -202,6 +208,12 @@ Caso adicione um usuário, precisa adicioná-lo para uma role e precisa adiciona
 ## Alerta
 
 Precisamos ficar atentos para as atualizações do alravel, quando precisaremos ajustar nosso aplicativo devidamente.
+
+
+## Erros que podem ocorrer
+
+Call to undefined method App\Models\User::roles()
+- Este indica que o trait ainda não foi configurado no model User (vide configurações)
 
     
 ## Credits
