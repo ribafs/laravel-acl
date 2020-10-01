@@ -32,9 +32,9 @@ php artisan vendor:publish --provider="Ribafs\LaravelAcl\LaravelAclServiceProvid
 Agora todos os arquivos do pacote já estão em seu aplicativo: migrations, seeders, Models, middleware, provider, etc
 Como este pacote não sobrescreve arquivos existestes, então precisa copiar dois arquivos:
 
-vendor/ribafs/laravel8acl/acl/seeders/DatabaseSeeder.php para a sua pasta database/seeders (irá sobrescrever o seu, então veja antes e adapte, se for o caso)
+vendor/ribafs/laravel-acl/acl/seeders/DatabaseSeeder.php para sua database/seeders (irá sobrescrever o seu, então veja antes e adapte, se for o caso)
 
-vendor/ribafs/laravel8acl/acl/web.php para o routes
+vendor/ribafs/laravel-acl/acl/web.php para o routes
 
 Este pacote vem com um command que pode fazer isso (copiar os dois arquivos acima para seu aplicativo sobrescrevendo os existentes). Execute
 ```bash
@@ -76,8 +76,13 @@ use Illuminate\Pagination\Paginator;
     {
         Paginator::useBootstrap();
     }
-
 ```
+### Alterar o campo id da migration users
+
+Mudar para
+```php
+            $table->increments('id');
+```            
 
 ## Executando
 
