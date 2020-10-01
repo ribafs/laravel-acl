@@ -30,6 +30,5 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth:sanctum'], function(){
     Route::resource('roles', 'App\Http\Controllers\Admin\RoleController');
     Route::resource('permissions', 'App\Http\Controllers\Admin\PermissionController');
     Route::resource('clients', 'App\Http\Controllers\Admin\ClientController');
-    Route::resource('products', 'App\Http\Controllers\Admin\ProductController');
 });
 
