@@ -76,8 +76,13 @@ use Illuminate\Pagination\Paginator;
     {
         Paginator::useBootstrap();
     }
-
 ```
+### Alterar o campo id da migration users
+
+Mudar para
+```php
+            $table->increments('id');
+```            
 
 ## Executando
 
