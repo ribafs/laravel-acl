@@ -20,12 +20,9 @@ class LaravelAclServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/laravel-acl.php', 'laravel-acl');
-
-        // Register the service the package provides.
-        $this->app->singleton('laravel-acl', function ($app) {
-            return new LaravelAcl;
-        });
+        $this->commands(
+            'Ribafs\LaravelAcl\Commands\CopyFilesCommand',
+        );
     }
 
     /**
