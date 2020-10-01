@@ -83,7 +83,7 @@ class User extends Authenticatable
 ## Adicionando novos usuários
 
 Lembrando que deve evitar inserir usuários manualmente.
-Para isso foi criado um command, que insere o usuário e anexa uma role e uma permission para o mesmo.
+Para isso foi criado um command, que insere o usuário e anexa uma role e uma permission para o mesmo. Por enquanto tem uma limitação. Anexa somente uma role e uma permissão.
 ```bash
 php artisan add:user
 ```
