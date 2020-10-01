@@ -62,6 +62,16 @@ class LaravelAclServiceProvider extends ServiceProvider
             __DIR__.'/../acl/Models/' => app_path('Models'),
         ], 'laravel-acl.models');
 
+        // Publishing the controllers.
+        $this->publishes([
+            __DIR__.'/../acl/Controllers/' => app_path('Http/Controllers/'),
+        ], 'laravel-acl.controllers');
+
+        // Publishing the views.
+        $this->publishes([
+            __DIR__.'/../acl/views/' => base_path('resources/views/'),
+        ], 'laravel-acl.viewss');
+
         // Publishing provider.
         $this->publishes([
             __DIR__.'/../acl/PermissionsServiceProvider.php' => app_path('Providers/PermissionsServiceProvider.php'),
