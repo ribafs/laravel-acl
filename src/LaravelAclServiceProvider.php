@@ -95,7 +95,9 @@ class LaravelAclServiceProvider extends ServiceProvider
             __DIR__.'/../acl/web.php' => base_path('routes/web.php'),
         ], 'laravel-acl.web');
 
-        File::makeDirectory(app_path('Console/Commands');
+        if (!File::exists(app_path('Console/Commands'))){
+            File::makeDirectory(app_path('Console/Commands');           
+        }
                             
         // Publishing command.
         $this->publishes([
