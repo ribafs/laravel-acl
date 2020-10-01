@@ -76,10 +76,15 @@ class LaravelAclServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../acl/HasPermissionsTrait.php' => app_path('Traits/HasPermissionsTrait.php'),
         ], 'laravel-acl.middleware');
-        
+    
         // Publishing command.
         $this->publishes([
             __DIR__.'/../acl/CopyFilesCommand.php' => app_path('Console/Commands/CopyFilesCommand.php'),
+        ], 'laravel-acl.command');
+
+        // Publishing command add:user.
+        $this->publishes([
+            __DIR__.'/../acl/AclUserCommand.php' => app_path('Console/Commands/AclUserCommand.php'),
         ], 'laravel-acl.command');
 
         // Registering package commands.

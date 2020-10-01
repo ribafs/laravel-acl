@@ -80,6 +80,13 @@ class User extends Authenticatable
     use HasPermissionsTrait;
 ...
 ```
+## Adicionando novos usuários
+
+Lembrando que deve evitar inserir usuários manualmente.
+Para isso foi criado um command, que insere o usuário e anexa uma role e uma permission para o mesmo.
+```bash
+php artisan add:user
+```
 
 # Testando o pacote após o login
 
