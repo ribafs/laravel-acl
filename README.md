@@ -21,12 +21,13 @@ cd acl
 
 
 ## Instalar o package laravel8acl e efetuar as configurações (obrigatório)
-
+```bash
 composer require ribafs/laravel-acl
-
+```
 # Publicar
+```bash
 php artisan vendor:publish --provider="Ribafs\LaravelAcl\LaravelAclServiceProvider"
-
+```
 Agora todos os arquivos do pacote já estão em seu aplicativo: migrations, seeders, Models, middleware, provider, etc
 Como este pacote não sobrescreve arquivos existestes, então precisa copiar dois arquivos:
 
@@ -35,9 +36,9 @@ vendor/ribafs/laravel8acl/acl/seeders/DatabaseSeeder.php para a sua pasta databa
 vendor/ribafs/laravel8acl/acl/web.php para o routes
 
 Este pacote vem com um command que pode fazer isso (copiar os dois arquivos acima para seu aplicativo sobrescrevendo os existentes). Execute
-
+```bash
 php artisan copy:files
-
+```
 ## Crie pelo menos um crud com uma tabela sua para testar
 
 Indico o ribafs/crud-generator-acl, pois foi criado para este papcote e já cria controller e views com suporte para ACL
@@ -46,16 +47,16 @@ https://github.com/ribafs/crud-generator-acl
 
 
 ## Instalar e publicar o gerador
-
+```bash
 composer require ribafs/crud-generator-acl
 
 php artisan vendor:publish --provider="Ribafs\CrudGeneratorAcl\CrudGeneratorServiceProvider"
-
+```
 
 ## Criar o CRUD Clients (exemplo)
-
+```bash
 php artisan crud-acl:generate Users --fields='name#string; email#string; password#string' --view-path=admin --controller-namespace=App\\Http\\Controllers\\Admin --route-group=admin --form-helper=html
-
+```
 
 ## Após a criação do CRUD faça os ajustes
 
@@ -68,14 +69,15 @@ php artisan crud-acl:generate Users --fields='name#string; email#string; passwor
 ## Executando
 
 Após adicionar seu CRUD, execute e teste o ACL no controle do acesso do seu aplicativo.
-
+```bash
 php artisan migrate --seed
 php artisan serve
 localhost:8000
-
+```
 Então clicamos em login e acessamos com, exemplo:
-super@gmail.com
-123456
+
+- super@gmail.com
+- 123456
 
 
 ## Configurations
@@ -83,26 +85,26 @@ super@gmail.com
 ## Registrar o middleware
 
 Editar o app/Http/Kernel.php e adicionar ao array $routeMiddleware = [
-
+```bash
         'role' => \Illuminate\Auth\Middleware\RoleMiddleware::class,
-
+```
 
 ## Registrar o provider
 
 Editar o config\app.php e adicione ao array 'providers' => [
-
+```bash
         App\Providers\PermissionsServiceProvider::class,
-
+```
 
 ## Edite o model app/Models/User.php e adicione
-
+```php
 use App\Traits\HasPermissionsTrait;
 
 class User extends Authenticatable
 {
     use HasPermissionsTrait;
 ...
-
+```
 
 # Testes após o login no Laravel ACL
 
@@ -167,8 +169,6 @@ Ele facilita muito nosso trabalho, pois é especializado nesta implementação. 
 ## Quando precisar adicionar novos CRUDs:
 
 ## Criar o CRUD Clients (exemplo)
-
-php artisan crud-acl:generate Users --fields='name#string; email#string; password#string' --view-path=admin --controller-namespace=App\\Http\\Controllers\\Admin --route-group=admin --form-helper=html
 
 ## Após a criação do CRUD faça os ajustes
 
