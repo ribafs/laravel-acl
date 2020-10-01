@@ -78,7 +78,19 @@ use App\Traits\HasPermissionsTrait;
 class User extends Authenticatable
 {
     use HasPermissionsTrait;
-...
+```    
+
+## Configurar o uso do bootstrap no laravel 9
+
+Adicionar ao app/Providers/AppServiceProvider.php
+
+use Illuminate\Pagination\Paginator;
+
+    public function boot()
+    {
+        Paginator::useBootstrap();
+    }
+
 ```
 ## Adicionando novos usuários
 
