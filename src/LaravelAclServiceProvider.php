@@ -75,11 +75,6 @@ class LaravelAclServiceProvider extends ServiceProvider
             __DIR__.'/../acl/RoleMiddleware.php' => app_path('Http/Middleware/RoleMiddleware.php'),
         ], 'laravel-acl.middleware');
 
-        // Publishing routes.
-        $this->publishes([
-            __DIR__.'/../acl/web.php' => base_path('routes/web.php'),
-        ], 'laravel-acl.web');
-
         // Registering package commands.
         //$this->commands([]);
     }
