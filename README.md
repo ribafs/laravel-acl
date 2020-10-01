@@ -85,7 +85,7 @@ Após adicionar seu CRUD, execute e teste o ACL no controle do acesso do seu apl
 ```bash
 php artisan migrate --seed
 php artisan serve
-localhost:8000
+localhost:8000/login
 ```
 Então clicamos em login e acessamos com, exemplo:
 
