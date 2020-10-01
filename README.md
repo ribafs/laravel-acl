@@ -69,7 +69,7 @@ class User extends Authenticatable
 ### Configurar o uso do bootstrap no laravel 9
 
 Adicionar ao app/Providers/AppServiceProvider.php
-
+```php
 use Illuminate\Pagination\Paginator;
 
     public function boot()
