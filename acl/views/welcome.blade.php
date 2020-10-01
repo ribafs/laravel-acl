@@ -71,7 +71,6 @@
                         <a href="{{ url('/home') }}">Home</a>
                         @role('super')
                         <a href="{{ url('/admin/clients') }}">Clients</a>
-                        <a href="{{ url('/admin/products') }}">Products</a>
                         <a href="{{ url('/admin/users') }}">Users</a>
                         <a href="{{ url('/admin/roles') }}">Roles</a>
                         <a href="{{ url('/admin/permissions') }}">Permissions</a>
@@ -83,7 +82,6 @@
                         @endrole
                         @role('manager')
                         <a href="{{ url('/admin/clients') }}">Clients</a>
-                        <a href="{{ url('/admin/products') }}">Products</a>
                         @endrole
                         @role('user')
                         <a href="{{ url('/admin/clients') }}">Clients</a>
