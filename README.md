@@ -219,8 +219,11 @@ Precisamos ficar atentos para as atualizações do alravel, quando precisaremos 
 
 ## Erros que podem ocorrer
 
-Call to undefined method App\Models\User::roles()
+### Call to undefined method App\Models\User::roles()
 - Este indica que o trait ainda não foi configurado no model User (vide configurações)
+
+### Caso a tela apareça quebrada, com os botões abaixo
+- Indica que falta configurar o middleware (ver configurações)
 
     
 ## Credits
