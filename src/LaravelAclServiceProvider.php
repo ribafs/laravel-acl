@@ -2,6 +2,7 @@
 namespace Ribafs\LaravelAcl;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\File;
 
 class LaravelAclServiceProvider extends ServiceProvider
 {
