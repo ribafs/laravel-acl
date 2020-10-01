@@ -83,6 +83,8 @@ Mudar para
 ```php
             $table->increments('id');
 ```
+### Ajustar o título do aplicativo
+Editar o .env e mudar a linha com APP_NAME, para algo como: APP_NAME='ACL to Laravel 8'
 
 
 ## Executar
