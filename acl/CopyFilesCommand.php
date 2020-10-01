@@ -27,7 +27,7 @@ class CopyFilesCommand extends Command
      */
     public function handle()
     {
-        File::copy(base_path('vendor/ribafs/laravel8acl/acl/seeders/DatabaseSeeder.php'), base_path('database/seeders/DatabaseSeeder.php'));
-        File::copy(base_path('vendor/ribafs/laravel8acl/acl/web.php'), base_path('routes/web.php'));
+        File::copy(base_path('vendor/ribafs/laravel-acl/acl/seeders/DatabaseSeeder.php'), base_path('database/seeders/DatabaseSeeder.php'));
+        File::copy(base_path('vendor/ribafs/laravel-acl/acl/web.php'), base_path('routes/web.php'));
     }
 }
