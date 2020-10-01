@@ -1,0 +1,32 @@
+{
+    "name": "ribafs/laravel-acl",
+    "description": "ACL Implementation to Applications in Laravel 8",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ribamar FS",
+            "email": "ribafs@gmail.com",
+            "homepage": "https://ribafs.github.io"
+        }
+    ],
+    "homepage": "https://github.com/ribafs/laravel-acl",
+    "keywords": ["Laravel", "Acl"],
+    "require": {
+
+    },
+    "autoload": {
+        "psr-4": {
+            "Ribafs\\LaravelAcl\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ribafs\\LaravelAcl\\LaravelAclServiceProvider"
+            ],
+            "aliases": {
+                "LaravelAcl": "Ribafs\\LaravelAcl\\Facades\\LaravelAcl"
+            }
+        }
+    }
+}
