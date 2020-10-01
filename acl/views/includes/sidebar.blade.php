@@ -39,13 +39,6 @@ Para tabelas com mais campos devemos remover o sidebar da view para deixar uma Ã
                     </a>
                 </li>
             </ul>
-            <ul class="nav" role="tablist">
-                <li role="presentation">
-                    <a href="{{ url('/admin/products') }}">
-                        - Products
-                    </a>
-                </li>
-            </ul>
             <hr>
             <ul class="nav" role="tablist">
                 <li role="presentation">
@@ -83,13 +76,6 @@ Para tabelas com mais campos devemos remover o sidebar da view para deixar uma Ã
                 <li role="presentation">
                     <a href="{{ url('/admin/clients') }}">
                         - Clients
-                    </a>
-                </li>
-            </ul>
-            <ul class="nav" role="tablist">
-                <li role="presentation">
-                    <a href="{{ url('/admin/products') }}">
-                        - Products
                     </a>
                 </li>
             </ul>
