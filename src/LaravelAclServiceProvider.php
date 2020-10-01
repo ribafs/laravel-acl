@@ -5,13 +5,29 @@ use Illuminate\Support\ServiceProvider;
 
 class LaravelAclServiceProvider extends ServiceProvider
 {
+    
     /**
-     * Perform post-registration booting of services.
+     * The console commands.
      *
-     * @return void
+     * @var bool
      */
+    protected $commands = [
+        'Ribafs\LaravelAcl\Commands\CopyFilesCommand',
+    ];
+    
     public function boot()
     {
+        // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'ribafs');
+        // $this->loadViewsFrom(__DIR__.'/../resources/views', 'ribafs');
+        // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        // $this->loadRoutesFrom(__DIR__.'/routes.php');
+
+        // Publishing is only necessary when using the CLI.
+        if ($this->app->runningInConsole()) {
+            $this->bootForConsole();
+        }
+    }
+
     /**
      * Register any package services.
      *
@@ -79,12 +95,14 @@ class LaravelAclServiceProvider extends ServiceProvider
             __DIR__.'/../acl/web.php' => base_path('routes/web.php'),
         ], 'laravel-acl.web');
 
+        File::makeDirectory(app_path('Console/Commands');
+                            
         // Publishing command.
         $this->publishes([
             __DIR__.'/../src/Commands/CopyFilesCommand.php' => app_path('Console/Commands/CopyFilesCommand.php'),
         ], 'laravel-acl.web');
 
         // Registering package commands.
-        //$this->commands($this->commands);
+        $this->commands($this->commands);
     }
 }
