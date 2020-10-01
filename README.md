@@ -7,7 +7,7 @@ Usando users, roles, permissions, trait, middleware, provider, etc
 [![Total Downloads][ico-downloads]][link-downloads]
 
 
-## Recomenda-se criar um novo aplicativo com laravel 8 para testar o laravel-acl
+### Recomenda-se criar um novo aplicativo com laravel 8 para testar o laravel-acl
 Lembre que este pacote sobrescreve alguns arquivos, como o routes/web.php e o DatabaseSeeder.php
 
 laravel new acl --jet --stack=livewire
@@ -17,15 +17,15 @@ no
 cd acl
 
 
-## Criar e configurar o banco
+### Criar e configurar o banco
 .env
 
 
-## Instalar o package laravel-acl e efetuar as configurações (obrigatório)
+## Instalar o pacote
 ```bash
 composer require ribafs/laravel-acl
 ```
-# Publicar
+## Publicar
 ```bash
 php artisan vendor:publish --provider="Ribafs\LaravelAcl\LaravelAclServiceProvider"
 ```
