@@ -11,6 +11,7 @@
     ],
     "homepage": "https://github.com/ribafs/laravel-acl",
     "keywords": ["Laravel", "Acl"],
+    "minimum-stability": "dev",
     "require": {
 
     },
