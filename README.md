@@ -121,7 +121,8 @@ add:user {name} {email} {password} {slug-role} {slug-perm}
 Exemplo:
 php artisan add:user 'User user2' user2@gmail.com 123456 manager clients-index
 
-Atualizar usuário existente anexando uma role e uma permission a ele, gravado em user_role e user_permission
+Atualizar usuário existente anexando uma role e uma permission a ele, gravado em user_role 
+e user_permission
 user:upd {email} {slug-role} {slug-perm}
 
 Exemplo:
