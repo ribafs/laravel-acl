@@ -8,7 +8,6 @@
             @role('super', 'admin')
             <div class="col-md-9">
                 <div class="card">
-                    @role('super', 'manager')
                     <div class="card-header">Roles</div>
                     <div class="card-body">
                         <a href="{{ url('/admin/roles/create') }}" class="btn btn-success btn-sm" title="Add New Role">
@@ -25,7 +24,6 @@
                                 </span>
                             </div>
                         </form>
-                    @endrole
                         <br/>
                         <br/>
                         <div class="table-responsive">
@@ -41,7 +39,6 @@
                                         <td>{{ $item->id }}</td>
                                         <td>{{ $item->name }}</td><td>{{ $item->slug }}</td>
                                         <td>
-                                @role('super', 'manager')
                                             <a href="{{ url('/admin/roles/' . $item->id) }}" title="View Role"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/admin/roles/' . $item->id . '/edit') }}" title="Edit Role"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
 
@@ -50,7 +47,6 @@
                                                 {{ csrf_field() }}
                                                 <button type="submit" class="btn btn-danger btn-sm" title="Delete Role" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
                                             </form>
-                                @endrole
                                         </td>
                                     </tr>
                                 @endforeach

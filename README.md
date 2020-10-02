@@ -6,7 +6,6 @@ Usando users, roles, permissions, trait, middleware, provider, etc
 
 
 ### Recomenda-se criar um novo aplicativo com laravel 8 para testar o laravel-acl
-Lembre que este pacote sobrescreve alguns arquivos, como o routes/web.php e o DatabaseSeeder.php
 
 laravel new acl --jet --stack=livewire
 
@@ -88,7 +87,7 @@ Mudar para
 ```php
             $table->increments('id');
 ```
-### Ajustar o título do aplicativo
+### Ajustar o título do aplicativo (opcional)
 Editar o .env e mudar a linha com APP_NAME, para algo como: APP_NAME='ACL to Laravel 8'
 
 
@@ -153,16 +152,16 @@ Exemplo:
 php artisan del:role super@gmail.com user
 ```
 
-# Testar após o login
+## Testar o controle de acesso
 
-## Acessar com super@gmail.com e 123456
+### Acessar com super@gmail.com e 123456
 
 Observe que ele é redirecionado para users
 
 Veja que seu menu aparece com todos os CRUDs e ele tem acesso a tudo, todos as views de todos os CRUDs
 
 
-## Acessar com admin@gmail.com e 123456
+### Acessar com admin@gmail.com e 123456
 
 Observe que ele é redirecionado para users
 
@@ -176,7 +175,7 @@ http://localhost:8000/admin/clients
 http://localhost:8000/admin/products
 
 
-## Acessar com manager@gmail.com e 123456
+### Acessar com manager@gmail.com e 123456
 
 Observe que ele é redirecionado para clients
 
@@ -194,7 +193,7 @@ http://localhost:8000/admin/permissions
 http://localhost:8000/admin/permissions/1/edit
 
 
-## Acessar com user@gmail.com e 123456
+### Acessar com user@gmail.com e 123456
 
 Observe que ele é redirecionado para clients
 
@@ -237,21 +236,6 @@ php artisan crud-acl:generate Products --fields='name#string; price#decimal' --v
 - Remover a migration users criada acima pelo gerador, visto que já temos uma migration customizada. 
 - Renomear o controller de ProductsController para ProductControler (singular, de acordo com a convenção do alravel). 
 - Mudar o nome do controller na rota criada pelo gerador para o singular.
-
-
-## Adicionar/alterar
-- users
-- roles
-- permissions
-
-Podemos adicionar novos usuários, remover existentes ou idealmente renomeá-los e trocar seus dados. Mas algumas alterações requerem alterações correspondentes no seeder Permissions, com código similar ao existente.
-
-Caso adicione um usuário, precisa adicioná-lo para uma role e precisa adicionar permissions paa ele, mas tudo isso pelo PermissionsSeeder, para que sejam cadastrados os respectivos dados nas tabels pivô. Caso adicione manualmente precisará adicionar também nas tabelas pivô, que não é interessante nem seguro.
-
-
-## Alerta
-
-Precisamos ficar atentos para as atualizações do alravel, quando precisaremos ajustar nosso aplicativo devidamente.
 
 
 ## Erros que podem ocorrer

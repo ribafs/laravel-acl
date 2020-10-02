@@ -40,7 +40,7 @@ class PermissionController extends Controller
 
     public function create()
     {
-        $auth = Auth::user()->hasRole('super', 'manager');
+        $auth = Auth::user()->hasRole('super', 'admin');
         if((!$auth)){
             return view('home');
         }else{
@@ -50,7 +50,7 @@ class PermissionController extends Controller
 
     public function store(Request $request)
     {
-        $auth = Auth::user()->hasRole('super', 'manager', 'user');
+        $auth = Auth::user()->hasRole('super', 'admin');
         if((!$auth)){
             return view('home');
         }else{
@@ -65,7 +65,7 @@ class PermissionController extends Controller
 
     public function show($id)
     {
-        $auth = Auth::user()->hasRole('super', 'manager');
+        $auth = Auth::user()->hasRole('super', 'admin');
         if((!$auth)){
             return view('home');
         }else{
@@ -77,7 +77,7 @@ class PermissionController extends Controller
 
     public function edit($id)
     {
-        $auth = Auth::user()->hasRole('super', 'manager');
+        $auth = Auth::user()->hasRole('super', 'admin');
         if((!$auth)){
             return view('home');
         }else{
@@ -89,7 +89,7 @@ class PermissionController extends Controller
 
     public function update(Request $request, $id)
     {
-        $auth = Auth::user()->hasRole('super', 'manager');
+        $auth = Auth::user()->hasRole('super', 'admin');
         if((!$auth)){
             return view('home');
         }else{
@@ -105,7 +105,7 @@ class PermissionController extends Controller
 
     public function destroy($id)
     {
-        $auth = Auth::user()->hasRole('super', 'manager');
+        $auth = Auth::user()->hasRole('super', 'admin');
         if((!$auth)){
             return view('home');
         }else{
