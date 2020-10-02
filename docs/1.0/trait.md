@@ -1,3 +1,8 @@
+# Trait
+
+O HasPermissionsTrait é peça fundamental do nosso pacote, com as principais funções para o controle de acesso.
+
+```php
 <?php
 namespace App\Traits;
 
@@ -127,3 +132,4 @@ trait HasPermissionsTrait {
        return $this;
     }
 }
+```
