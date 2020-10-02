@@ -29,11 +29,11 @@ class UserController extends Controller
             if (!empty($keyword)) {
                 $users = User::where('name', 'LIKE', "%$keyword%")
                 ->orWhere('email', 'LIKE', "%$keyword%")
-                ->orWhere('password', 'LIKE', "%$keyword%")
-                ->latest()->orderBy('id')->paginate($perPage);
+                ->orderBy('id')
+                ->latest()
+                ->paginate($perPage);
             } else {
-//                $users = User::latest()->orderBy('id')->paginate($perPage);
-                $users = DB::table('users')->paginate($perPage);//->orderBy('id')->get();
+                $users = User::orderBy('id')->latest()->paginate($perPage);
             }
 
             return view('admin.users.index', compact('users'));

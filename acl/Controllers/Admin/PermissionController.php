@@ -28,10 +28,11 @@ class PermissionController extends Controller
             if (!empty($keyword)) {
                 $permissions = Permission::where('name', 'LIKE', "%$keyword%")
                 ->orWhere('slug', 'LIKE', "%$keyword%")
-                ->latest()->orderBy('id')->paginate($perPage);
+                ->orderBy('id')
+                ->latest()
+                ->paginate($perPage);
             } else {
-//                $permissions = Permission::latest()->orderBy('id')->paginate($perPage);
-                $permissions = DB::table('permissions')->paginate($perPage);//->orderBy('id')->get();
+                $permissions = Permission::orderBy('id')->latest()->paginate($perPage);
             }
 
             return view('admin.permissions.index', compact('permissions'));

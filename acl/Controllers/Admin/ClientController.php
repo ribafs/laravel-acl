@@ -27,9 +27,11 @@ class ClientController extends Controller
             if (!empty($keyword)) {
                 $clients = Client::where('name', 'LIKE', "%$keyword%")
                 ->orWhere('email', 'LIKE', "%$keyword%")
-                ->latest()->orderBy('id')->paginate($perPage);
+                ->orderBy('id')
+                ->latest()
+                ->paginate($perPage);
             } else {
-                $clients = Client::latest()->orderBy('id')->paginate($perPage);
+                $clients = Client::orderBy('id')->latest()->paginate($perPage);
             }
 
             return view('admin.clients.index', compact('clients'));
