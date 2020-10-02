@@ -55,8 +55,6 @@ class AclUserCommand extends Command
         $slug_role = $this->argument('slug-role'); // array
         $slug_perm = $this->argument('slug-perm'); // array
 
-        //$userQry = User::all()->where('name', $name)->first();
-
         $role = Role::where('slug',$slug_role)->first(); // Precisa ser uma das roles existentes em 'roles'
         $perm = Permission::where('slug',$slug_perm)->first(); // Precisa ser uma das permissions que existem em 'permissions'
 
@@ -69,6 +67,6 @@ class AclUserCommand extends Command
         $user->roles()->attach($role); // Esta role precisa existir em 'roles' para que seja adequadamente anexada
         $user->permissions()->attach($perm); // Esta role precisa existir em 'permissions' para que seja adequadamente anexada
         $this->info(PHP_EOL);
-        $this->info('Usuário criado com sucesso. Confira na tabela users '.PHP_EOL);
+        $this->info('Usuárioo criado com sucesso. Confira na tabela users '.PHP_EOL);
     }
 }
