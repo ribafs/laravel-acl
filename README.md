@@ -106,7 +106,7 @@ Depois teste com os demais: admin, manager e user
 
 ## Documentação completa
 
-As informações acima e muito mais informações de como tirar proveito deste pacote no site abaixo:
+As informações acima e muito mais informações de como tirar o máximo proveito deste pacote no site abaixo:
 
 [https://ribafs.github.io/laravel-acl](https://ribafs.github.io/laravel-acl)
 
