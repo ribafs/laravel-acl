@@ -1,6 +1,10 @@
 # Implementação de ACL no Laravel 8
 Usando users, roles, permissions, trait, middleware, provider, etc
 
+## Testado em
+- Windows 7
+- Linux Mint 20
+
 ## Criar um novo aplicativo com laravel 8
 ```bash
 laravel new acl --jet --stack=livewire
