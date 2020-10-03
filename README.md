@@ -106,3 +106,7 @@ As informações acima e muito mais informações de como tirar proveito deste p
 
 [https://ribafs.github.io/laravel-acl](https://ribafs.github.io/laravel-acl)
 
+
+## Pacote exclusivo para a versão 7 do laravel
+
+[https://github.com/ribafs/laravel7-acl](https://github.com/ribafs/laravel7-acl)
