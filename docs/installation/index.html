@@ -9,7 +9,7 @@
         <meta name="description" content="ACL Implementation to Laravel 8">
       
       
-        <link rel="canonical" href="https://ribafs.github.io/overview/">
+        <link rel="canonical" href="https://ribafs.github.io/installation/">
       
       
         <meta name="author" content="Ribamar FS">
@@ -19,7 +19,7 @@
     
     
       
-        <title>Introdução - ACL to Laravel 8</title>
+        <title>Instalação - ACL to Laravel 8</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introducao" class="md-skip">
+        <a href="#instalacao-do-laravel-acl" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +90,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Introdução
+              Instalação
             
           </span>
         </div>
@@ -188,9 +188,180 @@
 
 
   <li class="md-nav__item">
-    <a href=".." title="Home" class="md-nav__link">
-      Home
+    <a href=".." title="Início" class="md-nav__link">
+      Início
     </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../introduction/" title="Introdução" class="md-nav__link">
+      Introdução
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Instalação
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Instalação" class="md-nav__link md-nav__link--active">
+      Instalação
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#crie-um-novo-aplicativo-com-laravel-8-para-testar-o-pacote" class="md-nav__link">
+    Crie um novo aplicativo com laravel 8 para testar o pacote
+  </a>
+  
+    <nav class="md-nav" aria-label="Crie um novo aplicativo com laravel 8 para testar o pacote">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#criar-e-configurar-o-banco" class="md-nav__link">
+    Criar e configurar o banco
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalar-o-laravel-acl" class="md-nav__link">
+    Instalar o laravel-acl
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#publicar" class="md-nav__link">
+    Publicar
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copiar-alguns-arquivos-existentes" class="md-nav__link">
+    Copiar alguns arquivos existentes
+  </a>
+  
+    <nav class="md-nav" aria-label="Copiar alguns arquivos existentes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#executar" class="md-nav__link">
+    Executar
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configurar" class="md-nav__link">
+    Configurar
+  </a>
+  
+    <nav class="md-nav" aria-label="Configurar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#registrar-o-middleware" class="md-nav__link">
+    Registrar o middleware
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registrar-o-provider" class="md-nav__link">
+    Registrar o provider
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editar-o-model-appmodelsuserphp-e-atualizar" class="md-nav__link">
+    Editar o model app/Models/User.php e atualizar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurar-o-uso-do-bootstrap-no-laravel-8" class="md-nav__link">
+    Configurar o uso do bootstrap no laravel 8
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alterar-o-campo-id-da-migration-users" class="md-nav__link">
+    Alterar o campo id da migration users
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajustar-o-titulo-do-aplicativo-opcional" class="md-nav__link">
+    Ajustar o título do aplicativo (opcional)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#executar_1" class="md-nav__link">
+    Executar
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -202,18 +373,6 @@
   <li class="md-nav__item">
     <a href="../bootstrap/" title="Bootstrap" class="md-nav__link">
       Bootstrap
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../commands/" title="Commands" class="md-nav__link">
-      Commands
     </a>
   </li>
 
@@ -236,8 +395,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../credits/" title="Credits" class="md-nav__link">
-      Credits
+    <a href="../views/" title="Views" class="md-nav__link">
+      Views
     </a>
   </li>
 
@@ -248,202 +407,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../customizations/" title="Customizations" class="md-nav__link">
-      Customizations
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../errors/" title="Errors" class="md-nav__link">
-      Errors
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../indexO/" title="Welcome to MkDocs" class="md-nav__link">
-      Welcome to MkDocs
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../instalation/" title="Instalação do laravel-acl" class="md-nav__link">
-      Instalação do laravel-acl
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../larecipe/" title="Larecipe" class="md-nav__link">
-      Larecipe
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../license/" title="License" class="md-nav__link">
-      License
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../middleware/" title="Middleware RoleMiddleware" class="md-nav__link">
-      Middleware RoleMiddleware
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Introdução
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-    
-    <a href="./" title="Introdução" class="md-nav__link md-nav__link--active">
-      Introdução
-    </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#secao-inicial" class="md-nav__link">
-    Seção Inicial
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#planejamento-inicial" class="md-nav__link">
-    Planejamento inicial
-  </a>
-  
-    <nav class="md-nav" aria-label="Planejamento inicial">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#teremos-os-seguintes-usuarios" class="md-nav__link">
-    Teremos os seguintes usuários
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#as-roles" class="md-nav__link">
-    As roles
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#as-permissoes" class="md-nav__link">
-    As permissões
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tabelas-pivo" class="md-nav__link">
-    Tabelas pivô
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gerenciamento-via-artisan" class="md-nav__link">
-    Gerenciamento via artisan
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../provider/" title="Provider" class="md-nav__link">
-      Provider
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../references/" title="Referências" class="md-nav__link">
-      Referências
+    <a href="../routes/" title="Rotas" class="md-nav__link">
+      Rotas
     </a>
   </li>
 
@@ -466,8 +431,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../tinker/" title="Usando o Tinker" class="md-nav__link">
-      Usando o Tinker
+    <a href="../middleware/" title="Middleware" class="md-nav__link">
+      Middleware
     </a>
   </li>
 
@@ -478,8 +443,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../training/" title="Training" class="md-nav__link">
-      Training
+    <a href="../provider/" title="Provider" class="md-nav__link">
+      Provider
     </a>
   </li>
 
@@ -502,8 +467,104 @@
 
 
   <li class="md-nav__item">
-    <a href="../views/" title="Views" class="md-nav__link">
-      Views
+    <a href="../tinker/" title="Tinker" class="md-nav__link">
+      Tinker
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../commands/" title="Gerenciando" class="md-nav__link">
+      Gerenciando
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../customizations/" title="Customizações" class="md-nav__link">
+      Customizações
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../training/" title="Testando" class="md-nav__link">
+      Testando
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../errors/" title="Erros" class="md-nav__link">
+      Erros
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../license/" title="Licença" class="md-nav__link">
+      Licença
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../references/" title="Referências" class="md-nav__link">
+      Referências
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../training/" title="Testando" class="md-nav__link">
+      Testando
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../credits/" title="Créditos" class="md-nav__link">
+      Créditos
     </a>
   </li>
 
@@ -532,57 +593,118 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#secao-inicial" class="md-nav__link">
-    Seção Inicial
+  <a href="#crie-um-novo-aplicativo-com-laravel-8-para-testar-o-pacote" class="md-nav__link">
+    Crie um novo aplicativo com laravel 8 para testar o pacote
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#planejamento-inicial" class="md-nav__link">
-    Planejamento inicial
-  </a>
-  
-    <nav class="md-nav" aria-label="Planejamento inicial">
+    <nav class="md-nav" aria-label="Crie um novo aplicativo com laravel 8 para testar o pacote">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#teremos-os-seguintes-usuarios" class="md-nav__link">
-    Teremos os seguintes usuários
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#as-roles" class="md-nav__link">
-    As roles
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#as-permissoes" class="md-nav__link">
-    As permissões
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tabelas-pivo" class="md-nav__link">
-    Tabelas pivô
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gerenciamento-via-artisan" class="md-nav__link">
-    Gerenciamento via artisan
+  <a href="#criar-e-configurar-o-banco" class="md-nav__link">
+    Criar e configurar o banco
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalar-o-laravel-acl" class="md-nav__link">
+    Instalar o laravel-acl
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#publicar" class="md-nav__link">
+    Publicar
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copiar-alguns-arquivos-existentes" class="md-nav__link">
+    Copiar alguns arquivos existentes
+  </a>
+  
+    <nav class="md-nav" aria-label="Copiar alguns arquivos existentes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#executar" class="md-nav__link">
+    Executar
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configurar" class="md-nav__link">
+    Configurar
+  </a>
+  
+    <nav class="md-nav" aria-label="Configurar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#registrar-o-middleware" class="md-nav__link">
+    Registrar o middleware
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registrar-o-provider" class="md-nav__link">
+    Registrar o provider
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editar-o-model-appmodelsuserphp-e-atualizar" class="md-nav__link">
+    Editar o model app/Models/User.php e atualizar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurar-o-uso-do-bootstrap-no-laravel-8" class="md-nav__link">
+    Configurar o uso do bootstrap no laravel 8
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alterar-o-campo-id-da-migration-users" class="md-nav__link">
+    Alterar o campo id da migration users
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajustar-o-titulo-do-aplicativo-opcional" class="md-nav__link">
+    Ajustar o título do aplicativo (opcional)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#executar_1" class="md-nav__link">
+    Executar
+  </a>
   
 </li>
       
@@ -598,63 +720,89 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/ribafs/laravel-acl/edit/master/docs/overview.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/ribafs/laravel-acl/edit/master/docs/installation.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="introducao">Introdução</h1>
-<hr />
+                <h1 id="instalacao-do-laravel-acl">Instalação do laravel-acl</h1>
+<h2 id="crie-um-novo-aplicativo-com-laravel-8-para-testar-o-pacote">Crie um novo aplicativo com laravel 8 para testar o pacote</h2>
+<p>laravel new acl --jet --stack=livewire</p>
+<p>no</p>
+<p>cd acl</p>
+<h3 id="criar-e-configurar-o-banco">Criar e configurar o banco</h3>
+<p>.env</p>
+<h2 id="instalar-o-laravel-acl">Instalar o laravel-acl</h2>
+<pre><code class="bash">composer require ribafs/laravel-acl
+</code></pre>
+
+<h2 id="publicar">Publicar</h2>
+<pre><code class="bash">php artisan vendor:publish --provider=&quot;Ribafs\LaravelAcl\LaravelAclServiceProvider&quot;
+</code></pre>
+
+<p>Agora todos os arquivos do pacote já estão em seu aplicativo: migrations, seeders, Models, middleware, provider, etc</p>
+<h2 id="copiar-alguns-arquivos-existentes">Copiar alguns arquivos existentes</h2>
+<p>Como este pacote não sobrescreve arquivos existestes, então você precisará executar o comando copy:files (veja abaixo) para copiar sobrescrevendo os arquivos abaixo:</p>
 <ul>
-<li><a href="#section-1">Seção Inicial</a></li>
+<li>DatabaseSeeder.php</li>
+<li>routes/web.php</li>
+<li>views/welcome.blade.php</li>
+<li>views/layouts/app.blade.php</li>
 </ul>
-<p><a name="section-1"></a></p>
-<h2 id="secao-inicial">Seção Inicial</h2>
-<p>Projeto de implementação de ACL em aplicativos do Laravel from Scratch</p>
-<p>Usando Users, Roles, Permissions, Provider, Middleware, Trait, Gates, etc</p>
-<p>Observação: este projeto é fruto de várias pesquisas pela internet e de alguns experimentos meus</p>
-<p>Conta com duas versões
-- laravel-acl - para o laravel 8
-- laravel7-acl - para o laravel 7</p>
-<h2 id="planejamento-inicial">Planejamento inicial</h2>
-<p>Teremos as seguintes tabelas principais</p>
-<pre><code class="php">users
-roles
-permissions
-clients
+<p>O comando fará uma cópia de cada arquivo sobrescrito, adicionando BAK ao seu nome. Exemplo: routes/webBAK.php</p>
+<h3 id="executar">Executar</h3>
+<pre><code class="bash">php artisan copy:files
 </code></pre>
 
-<h3 id="teremos-os-seguintes-usuarios">Teremos os seguintes usuários</h3>
-<pre><code class="php">1-Super
-2-Admin
-3-Manager
-4-User
+<h2 id="configurar">Configurar</h2>
+<h3 id="registrar-o-middleware">Registrar o middleware</h3>
+<p>Editar o app/Http/Kernel.php e adicionar ao array $routeMiddleware = [</p>
+<pre><code class="bash">        'role' =&gt; \Illuminate\Auth\Middleware\RoleMiddleware::class,
 </code></pre>
 
-<h3 id="as-roles">As roles</h3>
-<pre><code class="php">1-super
-2-admin
-3-manager
-4-user
+<h3 id="registrar-o-provider">Registrar o provider</h3>
+<p>Editar o config\app.php e adicione ao array 'providers' =&gt; [</p>
+<pre><code class="bash">        App\Providers\PermissionsServiceProvider::class,
 </code></pre>
 
-<h3 id="as-permissoes">As permissões</h3>
-<pre><code class="php">1-all-all
-2-users-all
-3-roles-all
-4-permissions-all
-5-clients-all
-6-products-all
-7-clients-index
+<h3 id="editar-o-model-appmodelsuserphp-e-atualizar">Editar o model app/Models/User.php e atualizar</h3>
+<pre><code class="php">use App\Traits\HasPermissionsTrait;
+
+class User extends Authenticatable
+{
+    use HasPermissionsTrait;
 </code></pre>
 
-<h3 id="tabelas-pivo">Tabelas pivô</h3>
-<p>As roles e permissions serão atribuidas aos usuários via código e não diretamente. Elas serão armazenadas nas tabelas pivô:
-- user_role
-- user_permission
-- role_permission</p>
-<h3 id="gerenciamento-via-artisan">Gerenciamento via artisan</h3>
-<p>Esta tarefa é inicialmente realizada pelo PermissionsSeeder, mas após a instalação users, roles e permissions podem ser gerenciados por commandos com artisan.</p>
+<h3 id="configurar-o-uso-do-bootstrap-no-laravel-8">Configurar o uso do bootstrap no laravel 8</h3>
+<p>Adicionar ao app/Providers/AppServiceProvider.php</p>
+<pre><code class="php">use Illuminate\Pagination\Paginator;
+
+    public function boot()
+    {
+        Paginator::useBootstrap();
+    }
+</code></pre>
+
+<h3 id="alterar-o-campo-id-da-migration-users">Alterar o campo id da migration users</h3>
+<p>Mudar para</p>
+<pre><code class="php">            $table-&gt;increments('id');
+</code></pre>
+
+<h3 id="ajustar-o-titulo-do-aplicativo-opcional">Ajustar o título do aplicativo (opcional)</h3>
+<p>Editar o .env e mudar a linha com APP_NAME, para algo como: APP_NAME='ACL to Laravel 8'</p>
+<h2 id="executar_1">Executar</h2>
+<p>Após adicionar seu CRUD, execute e teste o ACL no controle do acesso do seu aplicativo.</p>
+<pre><code class="bash">php artisan migrate --seed
+php artisan serve
+localhost:8000/login
+</code></pre>
+
+<p>Use como exemplo:</p>
+<ul>
+<li>super@gmail.com</li>
+<li>123456</li>
+</ul>
+<p>Depois teste com os demais: admin, manager e user</p>
                 
               
               
@@ -673,7 +821,7 @@ clients
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../middleware/" title="Middleware RoleMiddleware" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../introduction/" title="Introdução" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -682,19 +830,19 @@ clients
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Middleware RoleMiddleware
+                Introdução
               </div>
             </div>
           </a>
         
         
-          <a href="../provider/" title="Provider" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../bootstrap/" title="Bootstrap" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Provider
+                Bootstrap
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

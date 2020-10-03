@@ -4,11 +4,15 @@
      <lastmod>2020-10-03</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://ribafs.github.io/bootstrap/</loc>
+     <loc>https://ribafs.github.io/introduction/</loc>
      <lastmod>2020-10-03</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://ribafs.github.io/commands/</loc>
+     <loc>https://ribafs.github.io/installation/</loc>
+     <lastmod>2020-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://ribafs.github.io/bootstrap/</loc>
      <lastmod>2020-10-03</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
@@ -16,47 +20,11 @@
      <lastmod>2020-10-03</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://ribafs.github.io/credits/</loc>
+     <loc>https://ribafs.github.io/views/</loc>
      <lastmod>2020-10-03</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://ribafs.github.io/customizations/</loc>
-     <lastmod>2020-10-03</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://ribafs.github.io/errors/</loc>
-     <lastmod>2020-10-03</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://ribafs.github.io/indexO/</loc>
-     <lastmod>2020-10-03</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://ribafs.github.io/instalation/</loc>
-     <lastmod>2020-10-03</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://ribafs.github.io/larecipe/</loc>
-     <lastmod>2020-10-03</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://ribafs.github.io/license/</loc>
-     <lastmod>2020-10-03</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://ribafs.github.io/middleware/</loc>
-     <lastmod>2020-10-03</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://ribafs.github.io/overview/</loc>
-     <lastmod>2020-10-03</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://ribafs.github.io/provider/</loc>
-     <lastmod>2020-10-03</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://ribafs.github.io/references/</loc>
+     <loc>https://ribafs.github.io/routes/</loc>
      <lastmod>2020-10-03</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
@@ -64,11 +32,11 @@
      <lastmod>2020-10-03</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://ribafs.github.io/tinker/</loc>
+     <loc>https://ribafs.github.io/middleware/</loc>
      <lastmod>2020-10-03</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://ribafs.github.io/training/</loc>
+     <loc>https://ribafs.github.io/provider/</loc>
      <lastmod>2020-10-03</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
@@ -76,7 +44,39 @@
      <lastmod>2020-10-03</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://ribafs.github.io/views/</loc>
+     <loc>https://ribafs.github.io/tinker/</loc>
+     <lastmod>2020-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://ribafs.github.io/commands/</loc>
+     <lastmod>2020-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://ribafs.github.io/customizations/</loc>
+     <lastmod>2020-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://ribafs.github.io/training/</loc>
+     <lastmod>2020-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://ribafs.github.io/errors/</loc>
+     <lastmod>2020-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://ribafs.github.io/license/</loc>
+     <lastmod>2020-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://ribafs.github.io/references/</loc>
+     <lastmod>2020-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://ribafs.github.io/training/</loc>
+     <lastmod>2020-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://ribafs.github.io/credits/</loc>
      <lastmod>2020-10-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
