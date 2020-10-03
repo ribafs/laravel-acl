@@ -30,6 +30,13 @@ trait HasPermissionsTrait {
        return false;
     }
 
+    // Retorna todas as roles cadastradas em 'roles'
+    // Parâmetro: nenhum
+    // Exemplo: $user->allRoles()
+    public function allRoles() {
+        return Role::get('name', 'slug');    
+    }
+
     protected function getAllRoles(array $roles) {
         return Role::whereIn('slug',$roles)->get();    
     }
@@ -67,6 +74,13 @@ trait HasPermissionsTrait {
     }
 
     // PERMISSIONS
+
+    // Retorna todas as permissions cadastradas em 'permissions'
+    // Parâmetro: nenhum
+    // Exemplo: $user->allPermissions()
+    public function allPermissions() {
+        return Permission::get('name', 'slug');    
+    }
 
     protected function hasPermission($permission) {
        return (bool) $this->permissions->where('slug', $permission)->count();
