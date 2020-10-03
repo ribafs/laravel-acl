@@ -1,803 +1,615 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Ribamar FS">
+  <link rel="canonical" href="https://ribafs.github.io/seeders/">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Seeders - ACL to Laravel 8</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="ACL Implementation to Laravel 8">
-      
-      
-        <link rel="canonical" href="https://ribafs.github.io/seeders/">
-      
-      
-        <meta name="author" content="Ribamar FS">
-      
-      <link rel="shortcut icon" href="../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.1">
-    
-    
-      
-        <title>Seeders - ACL to Laravel 8</title>
-      
-    
-    
-      <link rel="stylesheet" href="../assets/stylesheets/main.38780c08.min.css">
-      
-        
-        <link rel="stylesheet" href="../assets/stylesheets/palette.3f72e892.min.css">
-        
-      
-    
-    
-    
-      
-        
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
-      
-    
-    
-    
-    
-      
-    
-    
-  </head>
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
   
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Seeders";
+    var mkdocs_page_input_path = "seeders.md";
+    var mkdocs_page_url = "/seeders/";
+  </script>
   
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
-      
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
   
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-        
-        <a href="#seeders" class="md-skip">
-          Skip to content
-        </a>
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="https://ribafs.github.io/" title="ACL to Laravel 8" class="md-header-nav__button md-logo" aria-label="ACL to Laravel 8">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+</head>
 
-    </a>
-    <label class="md-header-nav__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
-    </label>
-    <div class="md-header-nav__title" data-md-component="header-title">
-      
-        <div class="md-header-nav__ellipsis">
-          <span class="md-header-nav__topic md-ellipsis">
-            ACL to Laravel 8
-          </span>
-          <span class="md-header-nav__topic md-ellipsis">
-            
-              Seeders
-            
-          </span>
-        </div>
-      
-    </div>
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
     
-      <label class="md-header-nav__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-      </label>
-      
-<div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
-      <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Initializing search
-          </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> ACL to Laravel 8</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
 </div>
-    
-    
-      <div class="md-header-nav__source">
-        
-<a href="https://github.com/ribafs/laravel-acl/" title="Go to repository" class="md-source">
-  <div class="md-source__icon md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
-  </div>
-  <div class="md-source__repository">
-    GitHub
-  </div>
-</a>
       </div>
-    
-  </nav>
-</header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href="https://ribafs.github.io/" title="ACL to Laravel 8" class="md-nav__button md-logo" aria-label="ACL to Laravel 8">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
-    </a>
-    ACL to Laravel 8
-  </label>
-  
-    <div class="md-nav__source">
-      
-<a href="https://github.com/ribafs/laravel-acl/" title="Go to repository" class="md-source">
-  <div class="md-source__icon md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
-  </div>
-  <div class="md-source__repository">
-    GitHub
-  </div>
-</a>
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Início</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../introduction/">Introdução</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../installation/">Instalação</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../bootstrap/">Bootstrap</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../controllers/">Controllers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../views/">Views</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../routes/">Rotas</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Seeders</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#clients">Clients</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#permissions">Permissions</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../middleware/">Middleware</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../provider/">Provider</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../trait/">Trait</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../tinker/">Tinker</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../manager/">Gerenciando</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../customizations/">Customizações</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../training/">Testando</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../errors/">Erros</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../documentation/">Documentação</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../license/">Licença</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../references/">Referências</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../training/">Testando</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../credits/">Créditos</a>
+                    </li>
+                </ul>
+      </div>
     </div>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-      
+    </nav>
 
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
-  <li class="md-nav__item">
-    <a href=".." title="Início" class="md-nav__link">
-      Início
-    </a>
-  </li>
-
-    
       
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">ACL to Laravel 8</a>
+      </nav>
+
       
-      
-
-
-  <li class="md-nav__item">
-    <a href="../introduction/" title="Introdução" class="md-nav__link">
-      Introdução
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../installation/" title="Instalação" class="md-nav__link">
-      Instalação
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../bootstrap/" title="Bootstrap" class="md-nav__link">
-      Bootstrap
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../controllers/" title="Controllers" class="md-nav__link">
-      Controllers
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../views/" title="Views" class="md-nav__link">
-      Views
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../routes/" title="Rotas" class="md-nav__link">
-      Rotas
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
     
       
     
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Seeders
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-    
-    <a href="./" title="Seeders" class="md-nav__link md-nav__link--active">
-      Seeders
-    </a>
-    
+    <li>Seeders</li>
+    <li class="wy-breadcrumbs-aside">
       
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
+        <a href="https://github.com/ribafs/laravel-acl/edit/master/docs/seeders.md"
+          class="icon icon-github"> Edit on GitHub</a>
       
-        <li class="md-nav__item">
-  <a href="#clients" class="md-nav__link">
-    Clients
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#permissions" class="md-nav__link">
-    Permissions
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../middleware/" title="Middleware" class="md-nav__link">
-      Middleware
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../provider/" title="Provider" class="md-nav__link">
-      Provider
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../trait/" title="Trait" class="md-nav__link">
-      Trait
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../tinker/" title="Tinker" class="md-nav__link">
-      Tinker
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../commands/" title="Gerenciando" class="md-nav__link">
-      Gerenciando
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../customizations/" title="Customizações" class="md-nav__link">
-      Customizações
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../training/" title="Testando" class="md-nav__link">
-      Testando
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../errors/" title="Erros" class="md-nav__link">
-      Erros
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../license/" title="Licença" class="md-nav__link">
-      Licença
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../references/" title="Referências" class="md-nav__link">
-      Referências
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../training/" title="Testando" class="md-nav__link">
-      Testando
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../credits/" title="Créditos" class="md-nav__link">
-      Créditos
-    </a>
-  </li>
-
-    
+    </li>
   </ul>
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#clients" class="md-nav__link">
-    Clients
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#permissions" class="md-nav__link">
-    Permissions
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          <div class="md-content">
-            <article class="md-content__inner md-typeset">
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
               
-                
-                  <a href="https://github.com/ribafs/laravel-acl/edit/master/docs/seeders.md" title="Edit this page" class="md-content__button md-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
-                  </a>
-                
-                
                 <h1 id="seeders">Seeders</h1>
 <p>Este pacote vem com dois seeders: clients e permissions</p>
 <h2 id="clients">Clients</h2>
-<pre><code class="php">&lt;?php
-namespace Database\Seeders;
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="k">namespace</span> <span class="nx">Database\Seeders</span><span class="p">;</span>
 
-use Illuminate\Database\Seeder;
-use DB; 
+<span class="k">use</span> <span class="nx">Illuminate\Database\Seeder</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">DB</span><span class="p">;</span> 
 
-class ClientsSeeder extends Seeder
-{
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
-    {
-        $faker = \Faker\Factory::create();
+<span class="k">class</span> <span class="nc">ClientsSeeder</span> <span class="k">extends</span> <span class="nx">Seeder</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * Run the database seeds.</span>
+<span class="sd">     *</span>
+<span class="sd">     * @return void</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">run</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$faker</span> <span class="o">=</span> <span class="nx">\Faker\Factory</span><span class="o">::</span><span class="na">create</span><span class="p">();</span>
 
-        for($i=0; $i&lt;=100; $i++):
-            DB::table('clients')
-                -&gt;insert([
-                'name'      =&gt; $faker-&gt;name,
-                'email'      =&gt; $faker-&gt;email,
-                ]);
-        endfor;
-    }
-}
-</code></pre>
+        <span class="k">for</span><span class="p">(</span><span class="nv">$i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span><span class="o">&lt;=</span><span class="mi">100</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span><span class="o">:</span>
+            <span class="nx">DB</span><span class="o">::</span><span class="na">table</span><span class="p">(</span><span class="s1">&#39;clients&#39;</span><span class="p">)</span>
+                <span class="o">-&gt;</span><span class="na">insert</span><span class="p">([</span>
+                <span class="s1">&#39;name&#39;</span>      <span class="o">=&gt;</span> <span class="nv">$faker</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">,</span>
+                <span class="s1">&#39;email&#39;</span>      <span class="o">=&gt;</span> <span class="nv">$faker</span><span class="o">-&gt;</span><span class="na">email</span><span class="p">,</span>
+                <span class="p">]);</span>
+        <span class="k">endfor</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
 
 <h2 id="permissions">Permissions</h2>
 <p>O PermissionsSeeder é o coração do pacote laravel-acl. Ele faz o cadastro inicial das tabelas principais e pivô. O cadastro das tabelas pivô é feito indiretamente usando o método attach().</p>
-<pre><code class="php">&lt;?php
-namespace Database\Seeders;
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="k">namespace</span> <span class="nx">Database\Seeders</span><span class="p">;</span>
 
-use Illuminate\Database\Seeder;
-use App\Models\Permission;
-use App\Models\Role;
-use App\Models\User;
+<span class="k">use</span> <span class="nx">Illuminate\Database\Seeder</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">App\Models\Permission</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">App\Models\Role</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">App\Models\User</span><span class="p">;</span>
 
-class PermissionsSeeder extends Seeder
-{
-    public function run()
-    {
-        // Consultar e guardar em $super_permission a permissão all-all e demais
-        $super_permission = Permission::where('slug','all-all')-&gt;first();
-        $admin_permission1 = Permission::where('slug','users-all')-&gt;first();
-        $admin_permission2 = Permission::where('slug','roles-all')-&gt;first();
-        $admin_permission3 = Permission::where('slug','permissions-all')-&gt;first();
-        $manager_permission1 = Permission::where('slug', 'clients-all')-&gt;first();
-        $manager_permission2 = Permission::where('slug', 'products-all')-&gt;first();
-        $user_permission = Permission::where('slug', 'clients-index')-&gt;first();
-</code></pre>
+<span class="k">class</span> <span class="nc">PermissionsSeeder</span> <span class="k">extends</span> <span class="nx">Seeder</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">run</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// Consultar e guardar em $super_permission a permissão all-all e demais</span>
+        <span class="nv">$super_permission</span> <span class="o">=</span> <span class="nx">Permission</span><span class="o">::</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;slug&#39;</span><span class="p">,</span><span class="s1">&#39;all-all&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">first</span><span class="p">();</span>
+        <span class="nv">$admin_permission1</span> <span class="o">=</span> <span class="nx">Permission</span><span class="o">::</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;slug&#39;</span><span class="p">,</span><span class="s1">&#39;users-all&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">first</span><span class="p">();</span>
+        <span class="nv">$admin_permission2</span> <span class="o">=</span> <span class="nx">Permission</span><span class="o">::</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;slug&#39;</span><span class="p">,</span><span class="s1">&#39;roles-all&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">first</span><span class="p">();</span>
+        <span class="nv">$admin_permission3</span> <span class="o">=</span> <span class="nx">Permission</span><span class="o">::</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;slug&#39;</span><span class="p">,</span><span class="s1">&#39;permissions-all&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">first</span><span class="p">();</span>
+        <span class="nv">$manager_permission1</span> <span class="o">=</span> <span class="nx">Permission</span><span class="o">::</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;slug&#39;</span><span class="p">,</span> <span class="s1">&#39;clients-all&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">first</span><span class="p">();</span>
+        <span class="nv">$manager_permission2</span> <span class="o">=</span> <span class="nx">Permission</span><span class="o">::</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;slug&#39;</span><span class="p">,</span> <span class="s1">&#39;products-all&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">first</span><span class="p">();</span>
+        <span class="nv">$user_permission</span> <span class="o">=</span> <span class="nx">Permission</span><span class="o">::</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;slug&#39;</span><span class="p">,</span> <span class="s1">&#39;clients-index&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">first</span><span class="p">();</span>
+</code></pre></div>
+</td></tr></table>
 
-<pre><code>    // Cadastrar a role super e anexar a ela suas permissões
-    $super_role = new Role();
-    $super_role-&gt;slug = 'super';
-    $super_role-&gt;name = 'Super role';
-    $super_role-&gt;save();
-    $super_role-&gt;permissions()-&gt;attach($super_permission); // para que esta permission seja anexada sem problema, precisa existir em 'permissions'
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">Cadastrar</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">role</span><span class="w"> </span><span class="n">super</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">anexar</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">ela</span><span class="w"> </span><span class="n">suas</span><span class="w"> </span><span class="n">permissões</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">super_role</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="k">Role</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">super_role</span><span class="o">-&gt;</span><span class="n">slug</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;super&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">super_role</span><span class="o">-&gt;</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Super role&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">super_role</span><span class="o">-&gt;</span><span class="k">save</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">super_role</span><span class="o">-&gt;</span><span class="nf">permissions</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">attach</span><span class="p">(</span><span class="err">$</span><span class="n">super_permission</span><span class="p">);</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">para</span><span class="w"> </span><span class="n">que</span><span class="w"> </span><span class="n">esta</span><span class="w"> </span><span class="n">permission</span><span class="w"> </span><span class="n">seja</span><span class="w"> </span><span class="n">anexada</span><span class="w"> </span><span class="n">sem</span><span class="w"> </span><span class="n">problema</span><span class="p">,</span><span class="w"> </span><span class="n">precisa</span><span class="w"> </span><span class="n">existir</span><span class="w"> </span><span class="n">em</span><span class="w"> </span><span class="s1">&#39;permissions&#39;</span><span class="w"></span>
 
-    // Cadastrar a role admin e anexar a ela suas permissões
-    $admin_role = new Role();
-    $admin_role-&gt;slug = 'admin';
-    $admin_role-&gt;name = 'Admin role';
-    $admin_role-&gt;save();
-    $admin_role-&gt;permissions()-&gt;attach($admin_permission1);
-    $admin_role-&gt;permissions()-&gt;attach($admin_permission2);
-    $admin_role-&gt;permissions()-&gt;attach($admin_permission3);
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">Cadastrar</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">role</span><span class="w"> </span><span class="k">admin</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">anexar</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">ela</span><span class="w"> </span><span class="n">suas</span><span class="w"> </span><span class="n">permissões</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">admin_role</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="k">Role</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">admin_role</span><span class="o">-&gt;</span><span class="n">slug</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;admin&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">admin_role</span><span class="o">-&gt;</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Admin role&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">admin_role</span><span class="o">-&gt;</span><span class="k">save</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">admin_role</span><span class="o">-&gt;</span><span class="nf">permissions</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">attach</span><span class="p">(</span><span class="err">$</span><span class="n">admin_permission1</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">admin_role</span><span class="o">-&gt;</span><span class="nf">permissions</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">attach</span><span class="p">(</span><span class="err">$</span><span class="n">admin_permission2</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">admin_role</span><span class="o">-&gt;</span><span class="nf">permissions</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">attach</span><span class="p">(</span><span class="err">$</span><span class="n">admin_permission3</span><span class="p">);</span><span class="w"></span>
 
-    // Cadastrar a role manager e anexar a ela suas permissões
-    $manager_role = new Role();
-    $manager_role-&gt;slug = 'manager';
-    $manager_role-&gt;name = 'Manager role';
-    $manager_role-&gt;save();
-    $manager_role-&gt;permissions()-&gt;attach($manager_permission1);
-    $manager_role-&gt;permissions()-&gt;attach($manager_permission2);
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">Cadastrar</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">role</span><span class="w"> </span><span class="n">manager</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">anexar</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">ela</span><span class="w"> </span><span class="n">suas</span><span class="w"> </span><span class="n">permissões</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">manager_role</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="k">Role</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">manager_role</span><span class="o">-&gt;</span><span class="n">slug</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;manager&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">manager_role</span><span class="o">-&gt;</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Manager role&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">manager_role</span><span class="o">-&gt;</span><span class="k">save</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">manager_role</span><span class="o">-&gt;</span><span class="nf">permissions</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">attach</span><span class="p">(</span><span class="err">$</span><span class="n">manager_permission1</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">manager_role</span><span class="o">-&gt;</span><span class="nf">permissions</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">attach</span><span class="p">(</span><span class="err">$</span><span class="n">manager_permission2</span><span class="p">);</span><span class="w"></span>
 
-    // Cadastrar a role user e anexar a ela suas permissões
-    $user_role = new Role();
-    $user_role-&gt;slug = 'user';
-    $user_role-&gt;name = 'Uer role';
-    $user_role-&gt;save();
-    $user_role-&gt;permissions()-&gt;attach($user_permission);
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">Cadastrar</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">role</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">anexar</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">ela</span><span class="w"> </span><span class="n">suas</span><span class="w"> </span><span class="n">permissões</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">user_role</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="k">Role</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">user_role</span><span class="o">-&gt;</span><span class="n">slug</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;user&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">user_role</span><span class="o">-&gt;</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Uer role&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">user_role</span><span class="o">-&gt;</span><span class="k">save</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">user_role</span><span class="o">-&gt;</span><span class="nf">permissions</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">attach</span><span class="p">(</span><span class="err">$</span><span class="n">user_permission</span><span class="p">);</span><span class="w"></span>
 
-    // Consultar e guardar em $super_role a role super e demais
-    $super_role = Role::where('slug','super')-&gt;first();
-    $admin_role = Role::where('slug','admin')-&gt;first();
-    $manager_role = Role::where('slug', 'manager')-&gt;first();
-    $user_role = Role::where('slug','user')-&gt;first();
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">Consultar</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">guardar</span><span class="w"> </span><span class="n">em</span><span class="w"> </span><span class="err">$</span><span class="n">super_role</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">role</span><span class="w"> </span><span class="n">super</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">demais</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">super_role</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">Role</span><span class="o">::</span><span class="k">where</span><span class="p">(</span><span class="s1">&#39;slug&#39;</span><span class="p">,</span><span class="s1">&#39;super&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="k">first</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">admin_role</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">Role</span><span class="o">::</span><span class="k">where</span><span class="p">(</span><span class="s1">&#39;slug&#39;</span><span class="p">,</span><span class="s1">&#39;admin&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="k">first</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">manager_role</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">Role</span><span class="o">::</span><span class="k">where</span><span class="p">(</span><span class="s1">&#39;slug&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;manager&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="k">first</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">user_role</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">Role</span><span class="o">::</span><span class="k">where</span><span class="p">(</span><span class="s1">&#39;slug&#39;</span><span class="p">,</span><span class="s1">&#39;user&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="k">first</span><span class="p">();</span><span class="w"></span>
 
-    // Cadastrar no banco a permission all-all e anexar sua(a) respectiva(s) role(s)
-    $all_all = new Permission();
-    $all_all-&gt;slug = 'all-all';
-    $all_all-&gt;name = 'All permissions';
-    $all_all-&gt;save();
-    $all_all-&gt;roles()-&gt;attach($super_role); // para que esta role seja anexada sem problema, precisa existir em 'roles'
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">Cadastrar</span><span class="w"> </span><span class="k">no</span><span class="w"> </span><span class="n">banco</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">permission</span><span class="w"> </span><span class="ow">all</span><span class="o">-</span><span class="ow">all</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">anexar</span><span class="w"> </span><span class="n">sua</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="n">respectiva</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="k">role</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">all_all</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Permission</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">all_all</span><span class="o">-&gt;</span><span class="n">slug</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;all-all&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">all_all</span><span class="o">-&gt;</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;All permissions&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">all_all</span><span class="o">-&gt;</span><span class="k">save</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">all_all</span><span class="o">-&gt;</span><span class="n">roles</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">attach</span><span class="p">(</span><span class="err">$</span><span class="n">super_role</span><span class="p">);</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">para</span><span class="w"> </span><span class="n">que</span><span class="w"> </span><span class="n">esta</span><span class="w"> </span><span class="k">role</span><span class="w"> </span><span class="n">seja</span><span class="w"> </span><span class="n">anexada</span><span class="w"> </span><span class="n">sem</span><span class="w"> </span><span class="n">problema</span><span class="p">,</span><span class="w"> </span><span class="n">precisa</span><span class="w"> </span><span class="n">existir</span><span class="w"> </span><span class="n">em</span><span class="w"> </span><span class="s1">&#39;roles&#39;</span><span class="w"></span>
 
-    // Cadastrar no banco a permission user-all e anexar sua(a) respectiva(s) role(s)
-    $users_all = new Permission();
-    $users_all-&gt;slug = 'users-all';
-    $users_all-&gt;name = 'Users all';
-    $users_all-&gt;save();
-    $users_all-&gt;roles()-&gt;attach($admin_role);
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">Cadastrar</span><span class="w"> </span><span class="k">no</span><span class="w"> </span><span class="n">banco</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">permission</span><span class="w"> </span><span class="k">user</span><span class="o">-</span><span class="ow">all</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">anexar</span><span class="w"> </span><span class="n">sua</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="n">respectiva</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="k">role</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">users_all</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Permission</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">users_all</span><span class="o">-&gt;</span><span class="n">slug</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;users-all&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">users_all</span><span class="o">-&gt;</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Users all&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">users_all</span><span class="o">-&gt;</span><span class="k">save</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">users_all</span><span class="o">-&gt;</span><span class="n">roles</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">attach</span><span class="p">(</span><span class="err">$</span><span class="n">admin_role</span><span class="p">);</span><span class="w"></span>
 
-    // Cadastrar no banco a permission roles-all e anexar sua(a) respectiva(s) role(s)
-    $roles_all = new Permission();
-    $roles_all-&gt;slug = 'roles-all';
-    $roles_all-&gt;name = 'Roless all';
-    $roles_all-&gt;save();
-    $roles_all-&gt;roles()-&gt;attach($admin_role);
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">Cadastrar</span><span class="w"> </span><span class="k">no</span><span class="w"> </span><span class="n">banco</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">permission</span><span class="w"> </span><span class="n">roles</span><span class="o">-</span><span class="ow">all</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">anexar</span><span class="w"> </span><span class="n">sua</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="n">respectiva</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="k">role</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">roles_all</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Permission</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">roles_all</span><span class="o">-&gt;</span><span class="n">slug</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;roles-all&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">roles_all</span><span class="o">-&gt;</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Roless all&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">roles_all</span><span class="o">-&gt;</span><span class="k">save</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">roles_all</span><span class="o">-&gt;</span><span class="n">roles</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">attach</span><span class="p">(</span><span class="err">$</span><span class="n">admin_role</span><span class="p">);</span><span class="w"></span>
 
-    // Cadastrar no banco a permission permissions-all e anexar sua(a) respectiva(s) role(s)
-    $permissions_all = new Permission();
-    $permissions_all-&gt;slug = 'permissions-all';
-    $permissions_all-&gt;name = 'Permissions all';
-    $permissions_all-&gt;save();
-    $permissions_all-&gt;roles()-&gt;attach($admin_role);
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">Cadastrar</span><span class="w"> </span><span class="k">no</span><span class="w"> </span><span class="n">banco</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">permission</span><span class="w"> </span><span class="nf">permissions</span><span class="o">-</span><span class="ow">all</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">anexar</span><span class="w"> </span><span class="n">sua</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="n">respectiva</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="k">role</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">permissions_all</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Permission</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">permissions_all</span><span class="o">-&gt;</span><span class="n">slug</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;permissions-all&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">permissions_all</span><span class="o">-&gt;</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Permissions all&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">permissions_all</span><span class="o">-&gt;</span><span class="k">save</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">permissions_all</span><span class="o">-&gt;</span><span class="n">roles</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">attach</span><span class="p">(</span><span class="err">$</span><span class="n">admin_role</span><span class="p">);</span><span class="w"></span>
 
-    // Cadastrar no banco a permission clients-all e anexar sua(a) respectiva(s) role(s)
-    $clients_all = new Permission();
-    $clients_all-&gt;slug = 'clients-all';
-    $clients_all-&gt;name = 'Clients all';
-    $clients_all-&gt;save();
-    $clients_all-&gt;roles()-&gt;attach($manager_role);
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">Cadastrar</span><span class="w"> </span><span class="k">no</span><span class="w"> </span><span class="n">banco</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">permission</span><span class="w"> </span><span class="n">clients</span><span class="o">-</span><span class="ow">all</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">anexar</span><span class="w"> </span><span class="n">sua</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="n">respectiva</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="k">role</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">clients_all</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Permission</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">clients_all</span><span class="o">-&gt;</span><span class="n">slug</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;clients-all&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">clients_all</span><span class="o">-&gt;</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Clients all&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">clients_all</span><span class="o">-&gt;</span><span class="k">save</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">clients_all</span><span class="o">-&gt;</span><span class="n">roles</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">attach</span><span class="p">(</span><span class="err">$</span><span class="n">manager_role</span><span class="p">);</span><span class="w"></span>
 
-    // Cadastrar no banco a permission products-all e anexar sua(a) respectiva(s) role(s)
-    $products_all = new Permission();
-    $products_all-&gt;slug = 'products-all';
-    $products_all-&gt;name = 'Products all';
-    $products_all-&gt;save();
-    $products_all-&gt;roles()-&gt;attach($manager_role);
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">Cadastrar</span><span class="w"> </span><span class="k">no</span><span class="w"> </span><span class="n">banco</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">permission</span><span class="w"> </span><span class="n">products</span><span class="o">-</span><span class="ow">all</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">anexar</span><span class="w"> </span><span class="n">sua</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="n">respectiva</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="k">role</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">products_all</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Permission</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">products_all</span><span class="o">-&gt;</span><span class="n">slug</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;products-all&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">products_all</span><span class="o">-&gt;</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Products all&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">products_all</span><span class="o">-&gt;</span><span class="k">save</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">products_all</span><span class="o">-&gt;</span><span class="n">roles</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">attach</span><span class="p">(</span><span class="err">$</span><span class="n">manager_role</span><span class="p">);</span><span class="w"></span>
 
-    // Cadastrar no banco a permission clients-all e anexar sua(a) respectiva(s) role(s)
-    $clients_index = new Permission();
-    $clients_index-&gt;slug = 'clients-index';
-    $clients_index-&gt;name = 'Clients index';
-    $clients_index-&gt;save();
-    $clients_index-&gt;roles()-&gt;attach($user_role);
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">Cadastrar</span><span class="w"> </span><span class="k">no</span><span class="w"> </span><span class="n">banco</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">permission</span><span class="w"> </span><span class="n">clients</span><span class="o">-</span><span class="ow">all</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">anexar</span><span class="w"> </span><span class="n">sua</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="n">respectiva</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="k">role</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">clients_index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Permission</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">clients_index</span><span class="o">-&gt;</span><span class="n">slug</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;clients-index&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">clients_index</span><span class="o">-&gt;</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Clients index&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">clients_index</span><span class="o">-&gt;</span><span class="k">save</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">clients_index</span><span class="o">-&gt;</span><span class="n">roles</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">attach</span><span class="p">(</span><span class="err">$</span><span class="n">user_role</span><span class="p">);</span><span class="w"></span>
 
-    // Consultar e guardar em $super_role a role super
-    $super_role = Role::where('slug','super')-&gt;first();
-    $admin_role = Role::where('slug','admin')-&gt;first();
-    $manager_role = Role::where('slug', 'manager')-&gt;first();
-    $user_role = Role::where('slug', 'user')-&gt;first();
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">Consultar</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">guardar</span><span class="w"> </span><span class="n">em</span><span class="w"> </span><span class="err">$</span><span class="n">super_role</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">role</span><span class="w"> </span><span class="n">super</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">super_role</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">Role</span><span class="o">::</span><span class="k">where</span><span class="p">(</span><span class="s1">&#39;slug&#39;</span><span class="p">,</span><span class="s1">&#39;super&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="k">first</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">admin_role</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">Role</span><span class="o">::</span><span class="k">where</span><span class="p">(</span><span class="s1">&#39;slug&#39;</span><span class="p">,</span><span class="s1">&#39;admin&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="k">first</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">manager_role</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">Role</span><span class="o">::</span><span class="k">where</span><span class="p">(</span><span class="s1">&#39;slug&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;manager&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="k">first</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">user_role</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">Role</span><span class="o">::</span><span class="k">where</span><span class="p">(</span><span class="s1">&#39;slug&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;user&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="k">first</span><span class="p">();</span><span class="w"></span>
 
-    // Consultar e guardar em $super_perm a permissão all-all e demais
-    $super_perm = Permission::where('slug','all-all')-&gt;first();
-    $admin_perm1 = Permission::where('slug','users-all')-&gt;first();
-    $admin_perm2 = Permission::where('slug','roles-all')-&gt;first();
-    $admin_perm3 = Permission::where('slug','permissions-all')-&gt;first();
-    $manager_perm1 = Permission::where('slug','clients-all')-&gt;first();
-    $manager_perm2 = Permission::where('slug','products-all')-&gt;first();
-    $user_perm = Permission::where('slug','clients-index')-&gt;first();
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">Consultar</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">guardar</span><span class="w"> </span><span class="n">em</span><span class="w"> </span><span class="err">$</span><span class="n">super_perm</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">permissão</span><span class="w"> </span><span class="ow">all</span><span class="o">-</span><span class="ow">all</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">demais</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">super_perm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nl">Permission</span><span class="p">:</span><span class="err">:</span><span class="k">where</span><span class="p">(</span><span class="s1">&#39;slug&#39;</span><span class="p">,</span><span class="s1">&#39;all-all&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="k">first</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">admin_perm1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nl">Permission</span><span class="p">:</span><span class="err">:</span><span class="k">where</span><span class="p">(</span><span class="s1">&#39;slug&#39;</span><span class="p">,</span><span class="s1">&#39;users-all&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="k">first</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">admin_perm2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nl">Permission</span><span class="p">:</span><span class="err">:</span><span class="k">where</span><span class="p">(</span><span class="s1">&#39;slug&#39;</span><span class="p">,</span><span class="s1">&#39;roles-all&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="k">first</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">admin_perm3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nl">Permission</span><span class="p">:</span><span class="err">:</span><span class="k">where</span><span class="p">(</span><span class="s1">&#39;slug&#39;</span><span class="p">,</span><span class="s1">&#39;permissions-all&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="k">first</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">manager_perm1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nl">Permission</span><span class="p">:</span><span class="err">:</span><span class="k">where</span><span class="p">(</span><span class="s1">&#39;slug&#39;</span><span class="p">,</span><span class="s1">&#39;clients-all&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="k">first</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">manager_perm2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nl">Permission</span><span class="p">:</span><span class="err">:</span><span class="k">where</span><span class="p">(</span><span class="s1">&#39;slug&#39;</span><span class="p">,</span><span class="s1">&#39;products-all&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="k">first</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">user_perm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nl">Permission</span><span class="p">:</span><span class="err">:</span><span class="k">where</span><span class="p">(</span><span class="s1">&#39;slug&#39;</span><span class="p">,</span><span class="s1">&#39;clients-index&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="k">first</span><span class="p">();</span><span class="w"></span>
 
-    // Cadastrar o user Super no banco e anexar a ele sua(s) respectiva(s) role(s) e permission(s)
-    $super = new User();
-    $super-&gt;name = 'Super user';
-    $super-&gt;email = 'super@gmail.com';
-    $super-&gt;password = bcrypt('123456');
-    $super-&gt;save();
-    $super-&gt;roles()-&gt;attach($super_role); // Esta role precisa existir em 'roles' para que seja adequadamente anexada
-    $super-&gt;permissions()-&gt;attach($super_perm); // Esta role precisa existir em 'permissions' para que seja adequadamente anexada
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">Cadastrar</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="n">Super</span><span class="w"> </span><span class="k">no</span><span class="w"> </span><span class="n">banco</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">anexar</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">ele</span><span class="w"> </span><span class="n">sua</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="n">respectiva</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="k">role</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">permission</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">super</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="k">User</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">super</span><span class="o">-&gt;</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Super user&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">super</span><span class="o">-&gt;</span><span class="n">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;super@gmail.com&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">super</span><span class="o">-&gt;</span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bcrypt</span><span class="p">(</span><span class="s1">&#39;123456&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">super</span><span class="o">-&gt;</span><span class="k">save</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">super</span><span class="o">-&gt;</span><span class="n">roles</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">attach</span><span class="p">(</span><span class="err">$</span><span class="n">super_role</span><span class="p">);</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">Esta</span><span class="w"> </span><span class="k">role</span><span class="w"> </span><span class="n">precisa</span><span class="w"> </span><span class="n">existir</span><span class="w"> </span><span class="n">em</span><span class="w"> </span><span class="s1">&#39;roles&#39;</span><span class="w"> </span><span class="n">para</span><span class="w"> </span><span class="n">que</span><span class="w"> </span><span class="n">seja</span><span class="w"> </span><span class="n">adequadamente</span><span class="w"> </span><span class="n">anexada</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">super</span><span class="o">-&gt;</span><span class="nf">permissions</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">attach</span><span class="p">(</span><span class="err">$</span><span class="n">super_perm</span><span class="p">);</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">Esta</span><span class="w"> </span><span class="k">role</span><span class="w"> </span><span class="n">precisa</span><span class="w"> </span><span class="n">existir</span><span class="w"> </span><span class="n">em</span><span class="w"> </span><span class="s1">&#39;permissions&#39;</span><span class="w"> </span><span class="n">para</span><span class="w"> </span><span class="n">que</span><span class="w"> </span><span class="n">seja</span><span class="w"> </span><span class="n">adequadamente</span><span class="w"> </span><span class="n">anexada</span><span class="w"></span>
 
-    // Cadastrar o user Admin no banco e anexar a ele sua(s) respectiva(s) role(s) e permission(s)
-    $admin = new User();
-    $admin-&gt;name = 'Admin user';
-    $admin-&gt;email = 'admin@gmail.com';
-    $admin-&gt;password = bcrypt('123456');
-    $admin-&gt;save();
-    $admin-&gt;roles()-&gt;attach($admin_role);
-    $admin-&gt;permissions()-&gt;attach($admin_perm1);
-    $admin-&gt;permissions()-&gt;attach($admin_perm2);
-    $admin-&gt;permissions()-&gt;attach($admin_perm3);
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">Cadastrar</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="k">Admin</span><span class="w"> </span><span class="k">no</span><span class="w"> </span><span class="n">banco</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">anexar</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">ele</span><span class="w"> </span><span class="n">sua</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="n">respectiva</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="k">role</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">permission</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="k">admin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="k">User</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="k">admin</span><span class="o">-&gt;</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Admin user&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="k">admin</span><span class="o">-&gt;</span><span class="n">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;admin@gmail.com&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="k">admin</span><span class="o">-&gt;</span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bcrypt</span><span class="p">(</span><span class="s1">&#39;123456&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="k">admin</span><span class="o">-&gt;</span><span class="k">save</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="k">admin</span><span class="o">-&gt;</span><span class="n">roles</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">attach</span><span class="p">(</span><span class="err">$</span><span class="n">admin_role</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="k">admin</span><span class="o">-&gt;</span><span class="nf">permissions</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">attach</span><span class="p">(</span><span class="err">$</span><span class="n">admin_perm1</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="k">admin</span><span class="o">-&gt;</span><span class="nf">permissions</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">attach</span><span class="p">(</span><span class="err">$</span><span class="n">admin_perm2</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="k">admin</span><span class="o">-&gt;</span><span class="nf">permissions</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">attach</span><span class="p">(</span><span class="err">$</span><span class="n">admin_perm3</span><span class="p">);</span><span class="w"></span>
 
-    // Cadastrar o user Manager no banco e anexar a ele sua(s) respectiva(s) role(s) e permission(s)
-    $manager = new User();
-    $manager-&gt;name = 'Manager user';
-    $manager-&gt;email = 'manager@gmail.com';
-    $manager-&gt;password = bcrypt('123456');
-    $manager-&gt;save();
-    $manager-&gt;roles()-&gt;attach($manager_role);
-    $manager-&gt;permissions()-&gt;attach($manager_perm1);
-    $manager-&gt;permissions()-&gt;attach($manager_perm2);
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">Cadastrar</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="n">Manager</span><span class="w"> </span><span class="k">no</span><span class="w"> </span><span class="n">banco</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">anexar</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">ele</span><span class="w"> </span><span class="n">sua</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="n">respectiva</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="k">role</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">permission</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">manager</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="k">User</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">manager</span><span class="o">-&gt;</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Manager user&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">manager</span><span class="o">-&gt;</span><span class="n">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;manager@gmail.com&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">manager</span><span class="o">-&gt;</span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bcrypt</span><span class="p">(</span><span class="s1">&#39;123456&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">manager</span><span class="o">-&gt;</span><span class="k">save</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">manager</span><span class="o">-&gt;</span><span class="n">roles</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">attach</span><span class="p">(</span><span class="err">$</span><span class="n">manager_role</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">manager</span><span class="o">-&gt;</span><span class="nf">permissions</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">attach</span><span class="p">(</span><span class="err">$</span><span class="n">manager_perm1</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="n">manager</span><span class="o">-&gt;</span><span class="nf">permissions</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">attach</span><span class="p">(</span><span class="err">$</span><span class="n">manager_perm2</span><span class="p">);</span><span class="w"></span>
 
-    // Cadastrar o user User no banco e anexar a ele sua(s) respectiva(s) role(s) e permission(s)
-    $user = new User();
-    $user-&gt;name = 'User user';
-    $user-&gt;email = 'user@gmail.com';
-    $user-&gt;password = bcrypt('123456');
-    $user-&gt;save();
-    $user-&gt;roles()-&gt;attach($user_role);
-    $user-&gt;permissions()-&gt;attach($user_perm);
-}
-</code></pre>
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">Cadastrar</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="k">User</span><span class="w"> </span><span class="k">no</span><span class="w"> </span><span class="n">banco</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">anexar</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">ele</span><span class="w"> </span><span class="n">sua</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="n">respectiva</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="k">role</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">permission</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="k">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="k">User</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="k">user</span><span class="o">-&gt;</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;User user&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="k">user</span><span class="o">-&gt;</span><span class="n">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;user@gmail.com&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="k">user</span><span class="o">-&gt;</span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bcrypt</span><span class="p">(</span><span class="s1">&#39;123456&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="k">user</span><span class="o">-&gt;</span><span class="k">save</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="k">user</span><span class="o">-&gt;</span><span class="n">roles</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">attach</span><span class="p">(</span><span class="err">$</span><span class="n">user_role</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="err">$</span><span class="k">user</span><span class="o">-&gt;</span><span class="nf">permissions</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">attach</span><span class="p">(</span><span class="err">$</span><span class="n">user_perm</span><span class="p">);</span><span class="w"></span>
+<span class="err">}</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+
 <p>}
 ```</p>
-                
               
-              
-                
-
-
-              
-            </article>
+            </div>
           </div>
-        </div>
-      </main>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        
-<footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
-        
-          <a href="../routes/" title="Rotas" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-            </div>
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Rotas
-              </div>
-            </div>
-          </a>
-        
-        
-          <a href="../middleware/" title="Middleware" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Middleware
-              </div>
-            </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
-      </div>
+        <a href="../middleware/" class="btn btn-neutral float-right" title="Middleware">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../routes/" class="btn btn-neutral" title="Rotas"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
   </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
       
-    </div>
-    
-      <script src="../assets/javascripts/vendor.77e55a48.min.js"></script>
-      <script src="../assets/javascripts/bundle.aa3f9871.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
       
-      <script>
-        app = initialize({
-          base: "..",
-          features: [],
-          search: Object.assign({
-            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
-          }, typeof search !== "undefined" && search)
-        })
-      </script>
+          <a href="https://github.com/ribafs/laravel-acl/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
-    
-  </body>
+      
+        <span><a href="../routes/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../middleware/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
 </html>
