@@ -98,6 +98,18 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Gerenciando</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#adicionar-user-com-role-e-permission-anexada-a-ele">Adicionar user com role e permission anexada a ele</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#atualizar-usuario-existente-anexando-uma-role-e-uma-permission-a-ele">Atualizar usuário existente anexando uma role e uma permission a ele</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#adicionar-uma-role-para-a-tabela-roles">Adicionar uma role para a tabela roles</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#adicionar-uma-permission-para-a-tabela-permissions">Adicionar uma permission para a tabela permissions</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#remover-permission-de-user-de-user-permission">Remover permission de user de 'user-permission'</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#remover-role-de-user-de-user_role">Remover role de user de 'user_role'</a>
+    </li>
     </ul>
                     </li>
                 </ul>
@@ -161,7 +173,7 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="gerenciando-o-aplicativo">Gerenciando o aplicativo</h2>
+                <h1 id="gerenciando-o-aplicativo">Gerenciando o aplicativo</h1>
 <p>Até o momento temos 3 formas de gerenciar os aplicativos criados usando o ribafs/laravel-acl:
 - Usando CRUDs. Muito simples, mas por enquanto gerencia somente as tabelas principais: users, roles, permissions e clients.
 - Usando o <a href="tinker">tinker</a>
@@ -169,77 +181,70 @@
 As duas últimas tanto gerenciam as tabelas principais quanto as pivô.</p>
 <p>Lembrando que deve evitar anexar roles e permissions manualmente para usuários.</p>
 <p>Para isso foram criados alguns commands, que gerencial de forma adequada.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="x">Adicionar user com role e permission anexada a ele</span>
-<span class="x">add:user {name} {email} {password} {slug-role} {slug-perm}</span>
+<h2 id="adicionar-user-com-role-e-permission-anexada-a-ele">Adicionar user com role e permission anexada a ele</h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>add:user <span class="o">{</span>name<span class="o">}</span> <span class="o">{</span>email<span class="o">}</span> <span class="o">{</span>password<span class="o">}</span> <span class="o">{</span>slug-role<span class="o">}</span> <span class="o">{</span>slug-perm<span class="o">}</span>
 
-<span class="x">Exemplo:</span>
-<span class="x">php artisan add:user &#39;User user2&#39; user2@gmail.com 123456 manager clients-index</span>
+Exemplo:
+php artisan add:user <span class="s1">&#39;User user2&#39;</span> user2@gmail.com <span class="m">123456</span> manager clients-index
+</code></pre></div>
+</td></tr></table>
 
-<span class="x">Atualizar usuário existente anexando uma role e uma permission a ele, gravado em user_role </span>
-<span class="x">e user_permission</span>
-<span class="x">user:upd {email} {slug-role} {slug-perm}</span>
+<h2 id="atualizar-usuario-existente-anexando-uma-role-e-uma-permission-a-ele">Atualizar usuário existente anexando uma role e uma permission a ele</h2>
+<p>gravado em user_role e user_permission</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>user:upd <span class="o">{</span>email<span class="o">}</span> <span class="o">{</span>slug-role<span class="o">}</span> <span class="o">{</span>slug-perm<span class="o">}</span>
 
-<span class="x">Exemplo:</span>
-<span class="x">php artisan user:upd manager@gmail.com manager clients-index</span>
+Exemplo:
+php artisan user:upd manager@gmail.com manager clients-index
+</code></pre></div>
+</td></tr></table>
 
-<span class="x">Adicionar uma role para a tabela roles</span>
-<span class="x">add:role {name-role} {slug-role}</span>
+<h2 id="adicionar-uma-role-para-a-tabela-roles">Adicionar uma role para a tabela roles</h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>add:role <span class="o">{</span>name-role<span class="o">}</span> <span class="o">{</span>slug-role<span class="o">}</span>
 
-<span class="x">Exemplo:</span>
-<span class="x">php artisan add:role &#39;Admin test&#39; admin-test </span>
+Exemplo:
+php artisan add:role <span class="s1">&#39;Admin test&#39;</span> admin-test 
+</code></pre></div>
+</td></tr></table>
 
-<span class="x">Adicionar uma permission para a tabela permissions</span>
-<span class="x">add:perm {name-perm} {slug-perm}</span>
+<h2 id="adicionar-uma-permission-para-a-tabela-permissions">Adicionar uma permission para a tabela permissions</h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>add:perm <span class="o">{</span>name-perm<span class="o">}</span> <span class="o">{</span>slug-perm<span class="o">}</span>
 
-<span class="x">Exemplo:</span>
-<span class="x">php artisan add:perm &#39;Clients test&#39; clients-testt </span>
+Exemplo:
+php artisan add:perm <span class="s1">&#39;Clients test&#39;</span> clients-testt 
+</code></pre></div>
+</td></tr></table>
 
-<span class="x">Remover permission de user de &#39;user-permission&#39;</span>
-<span class="x">del:perm {email-user} {slug-perm}</span>
+<h2 id="remover-permission-de-user-de-user-permission">Remover permission de user de 'user-permission'</h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>del:perm <span class="o">{</span>email-user<span class="o">}</span> <span class="o">{</span>slug-perm<span class="o">}</span>
 
-<span class="x">Exemplo:</span>
-<span class="x">php artisan del:perm super@gmail.com clients-index</span>
+Exemplo:
+php artisan del:perm super@gmail.com clients-index
+</code></pre></div>
+</td></tr></table>
 
-<span class="x">Remover role de user de &#39;user_role&#39;</span>
-<span class="x">del:role {email-user} {slug-role}</span>
+<h2 id="remover-role-de-user-de-user_role">Remover role de user de 'user_role'</h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>del:role <span class="o">{</span>email-user<span class="o">}</span> <span class="o">{</span>slug-role<span class="o">}</span>
 
-<span class="x">Exemplo:</span>
-<span class="x">php artisan del:role super@gmail.com user</span>
+Exemplo:
+php artisan del:role super@gmail.com user
 </code></pre></div>
 </td></tr></table>
               
