@@ -116,3 +116,10 @@ As informações acima e muito mais informações de como tirar o máximo provei
 Se deseja um pacote para usar com a versão 7 do laravel, clique abaixo:
 
 [https://github.com/ribafs/laravel7-acl](https://github.com/ribafs/laravel7-acl)
+
+## Demo online
+
+Caso queira ver um demom de aplicativo usando o pacote ribafs/laravel-acl, acesse:
+
+http://159.89.22.33/laravel/public/
+
