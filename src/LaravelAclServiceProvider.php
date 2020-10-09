@@ -45,6 +45,7 @@ class LaravelAclServiceProvider extends ServiceProvider
             __DIR__.'/../config/laravel-acl.php' => config_path('laravel-acl.php'),
         ], 'laravel-acl.config');
 
+        // Directories
         // Publishing the migrations.
         $this->publishes([
             __DIR__.'/../acl/migrations/' => base_path('database/migrations/'),
@@ -70,6 +71,12 @@ class LaravelAclServiceProvider extends ServiceProvider
             __DIR__.'/../acl/views/' => base_path('resources/views/'),
         ], 'laravel-acl.viewss');
 
+        // Publishing commands.
+        $this->publishes([
+            __DIR__.'/../acl/Commands/' => app_path('Console/Commands/'),
+        ], 'laravel-acl.commands');
+
+        // Files
         // Publishing provider.
         $this->publishes([
             __DIR__.'/../acl/PermissionsServiceProvider.php' => app_path('Providers/PermissionsServiceProvider.php'),
@@ -85,11 +92,6 @@ class LaravelAclServiceProvider extends ServiceProvider
             __DIR__.'/../acl/HasPermissionsTrait.php' => app_path('Traits/HasPermissionsTrait.php'),
         ], 'laravel-acl.middleware');
     
-        // Publishing commands.
-        $this->publishes([
-            __DIR__.'/../acl/Commands/' => app_path('Console/Commands/'),
-        ], 'laravel-acl.commands');
-
         // Registering package commands.
         //$this->commands([]);
     }
