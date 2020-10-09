@@ -30,7 +30,7 @@ class CopyFilesCommand extends Command
         $seeder = base_path('database/seeders/DatabaseSeeder.php');
         if(File::exists($seeder)){
             File::copy($seeder, base_path('database/seeders/DatabaseSeederBAK.php'));
-            File::copy(base_path('vendor/ribafs/laravel-acl/acl/seeders/DatabaseSeeder.php'), base_path('database/seeders/DatabaseSeeder.php'));
+            File::copy(base_path('vendor/ribafs/laravel-acl/acl/seeders/DatabaseSeeder.php'), $seeder);
         }
         $route = base_path('routes/web.php');
         if(File::exists($route)){
