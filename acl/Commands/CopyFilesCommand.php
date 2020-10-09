@@ -37,6 +37,31 @@ class CopyFilesCommand extends Command
             File::copy($route, base_path('routes/webBAK.php'));
             File::copy(base_path('vendor/ribafs/laravel-acl/acl/web.php'), base_path('routes/web.php'));
         }
+        $user = app_path('Models/User.php');
+        if(File::exists($user)){
+            File::copy($user, app_path('Models/UserBAK.php'));
+            File::copy(app_path('vendor/ribafs/laravel-acl/acl/User.php'), app_path('Models/User.php'));
+        }
+        $appp = app_path('Providers/AppServiceProvider.php');
+        if(File::exists($appp)){
+            File::copy($appp, app_path('Providers/AppServiceProviderBAK.php'));
+            File::copy(app_path('vendor/ribafs/laravel-acl/acl/AppServiceProvider.php'), app_path('Providers/AppServiceProvider.php'));
+        }
+        $users = database_path('migrations/2014_10_12_000000_create_users_table.php');
+        if(File::exists($users)){
+            File::copy($users, database_path('migrations/2014_10_12_000000_create_users_tableBAK.php'));
+            File::copy(database_path('vendor/ribafs/laravel-acl/acl/2014_10_12_000000_create_users_table.php'), database_path('migrations/2014_10_12_000000_create_users_table.php'));
+        }
+        $app = base_path('config/app.php');
+        if(File::exists($app)){
+            File::copy($app, base_path('config/appBAK.php'));
+            File::copy(base_path('vendor/ribafs/laravel-acl/acl/app.php'), base_path('config/app.php'));
+        }
+        $kernel = app_path('Http/Kernel.php');
+        if(File::exists($kernel)){
+            File::copy($kernel, app_path('Http/kernelBAK.php'));
+            File::copy(base_path('vendor/ribafs/laravel-acl/acl/Kernel.php'), app_path('Http/kernel.php'));
+        }
         $wel = base_path('resources/views/welcome.blade.php');
         if(File::exists($wel)){
             File::copy($wel, base_path('resources/views/welcome.bladeBAK.php'));
