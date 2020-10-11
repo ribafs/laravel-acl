@@ -40,6 +40,7 @@ class LaravelAclServiceProvider extends ServiceProvider
      */
     protected function bootForConsole()
     {
+        // Here only folders with new files and only copy without overwrite
         // Publishing the configuration file.
         $this->publishes([
             __DIR__.'/../config/laravel-acl.php' => config_path('laravel-acl.php'),
