@@ -37,14 +37,14 @@ class CopyFilesCommand extends Command
         $wel = base_path('resources/views/welcome.php');
         File::copy(base_path('vendor/ribafs/laravel-acl/up/welcome.blade.php'), $wel);
 
-        $home = base_path('resources/views/home.php');
+        $home = base_path('resources/views/home.blade.php');
         File::copy(base_path('vendor/ribafs/laravel-acl/up/home.blade.php'), $home);
 
         $appb = base_path('resources/views/layouts/app.blade.php');
         File::copy(base_path('vendor/ribafs/laravel-acl/up/app.blade.php'), $appb);
 
-        $appp = app_path('Providers/AppServiceProvider.php');
-        File::copy(base_path('vendor/ribafs/laravel-acl/up/AppServiceProvider.php'), $appp);
+        $prov = app_path('Providers/AppServiceProvider.php');
+        File::copy(base_path('vendor/ribafs/laravel-acl/up/AppServiceProvider.php'), $prov);
 
         $app = base_path('config/app.php');
         File::copy(base_path('vendor/ribafs/laravel-acl/up/app.php'), $app);
