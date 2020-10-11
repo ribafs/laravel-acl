@@ -48,50 +48,24 @@ class LaravelAclServiceProvider extends ServiceProvider
         // Directories
         // Publishing the migrations.
         $this->publishes([
-            __DIR__.'/../acl/migrations/' => base_path('database/migrations/'),
-        ], 'laravel-acl.nigrations');
+            __DIR__.'/../up/database/' => base_path('/database'),
+        ], 'laravel-acl.database');
 
-        // Publishing seeders.
+        // Publishing app.
         $this->publishes([
-            __DIR__.'/../acl/seeders/' => base_path('database/seeders/'),
-        ], 'laravel-acl.seeders');
-
-        // Publishing Models.
-        $this->publishes([
-            __DIR__.'/../acl/Models/' => app_path('Models'),
+            __DIR__.'/../up/app/' => base_path('/app'),
         ], 'laravel-acl.models');
 
-        // Publishing the controllers.
+        // Publishing the resources.
         $this->publishes([
-            __DIR__.'/../acl/Controllers/' => app_path('Http/Controllers/'),
-        ], 'laravel-acl.controllers');
-
-        // Publishing the views.
-        $this->publishes([
-            __DIR__.'/../acl/views/' => base_path('resources/views/'),
+            __DIR__.'/../up/resources/' => base_path('/resources'),
         ], 'laravel-acl.viewss');
 
         // Publishing commands.
         $this->publishes([
-            __DIR__.'/../acl/Commands/' => app_path('Console/Commands/'),
+            __DIR__.'/../up/Commands/' => app_path('Console/Commands'),
         ], 'laravel-acl.commands');
-
-        // Files
-        // Publishing provider.
-        $this->publishes([
-            __DIR__.'/../acl/PermissionsServiceProvider.php' => app_path('Providers/PermissionsServiceProvider.php'),
-        ], 'laravel-acl.provider');
-
-        // Publishing Middleware.
-        $this->publishes([
-            __DIR__.'/../acl/RoleMiddleware.php' => app_path('Http/Middleware/RoleMiddleware.php'),
-        ], 'laravel-acl.middleware');
-
-        // Publishing trait.
-        $this->publishes([
-            __DIR__.'/../acl/HasPermissionsTrait.php' => app_path('Traits/HasPermissionsTrait.php'),
-        ], 'laravel-acl.middleware');
-    
+  
         // Registering package commands.
         //$this->commands([]);
     }
