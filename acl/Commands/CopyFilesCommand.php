@@ -30,6 +30,15 @@ class CopyFilesCommand extends Command
         $route = base_path('routes/web.php');
         File::copy(base_path('vendor/ribafs/laravel-acl/acl/web.php'), $route);
 
+        $user = app_path('Models/User.php');
+        File::copy(base_path('vendor/ribafs/laravel-acl/acl/User.php'), $user);
+
+        $wel = resources_path('views/welcome.php');
+        File::copy(base_path('vendor/ribafs/laravel-acl/acl/views/welcome.blade.php'), $wel);
+
+        $appb = resources_path('views/layouts/app.blade.php');
+        File::copy(base_path('vendor/ribafs/laravel-acl/acl/views/app.blade.php'), $appb);
+
         $appp = app_path('Providers/AppServiceProvider.php');
         File::copy(base_path('vendor/ribafs/laravel-acl/acl/AppServiceProvider.php'), $appp);
 
