@@ -19,7 +19,7 @@
     
     
       
-        <title>Provider - ACL to Laravel 8</title>
+        <title>Provider - Laravel 8 ACL</title>
       
     
     
@@ -44,6 +44,8 @@
       
     
     
+    
+      <link rel="stylesheet" href="../css/extra.css">
     
     
       
@@ -77,7 +79,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="https://ribafs.github.io/" title="ACL to Laravel 8" class="md-header-nav__button md-logo" aria-label="ACL to Laravel 8">
+    <a href="https://ribafs.github.io/" title="Laravel 8 ACL" class="md-header-nav__button md-logo" aria-label="Laravel 8 ACL">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -90,7 +92,7 @@
       
         <div class="md-header-nav__ellipsis">
           <span class="md-header-nav__topic md-ellipsis">
-            ACL to Laravel 8
+            Laravel 8 ACL
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
@@ -149,13 +151,13 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://ribafs.github.io/" title="ACL to Laravel 8" class="md-nav__button md-logo" aria-label="ACL to Laravel 8">
+    <a href="https://ribafs.github.io/" title="Laravel 8 ACL" class="md-nav__button md-logo" aria-label="Laravel 8 ACL">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    ACL to Laravel 8
+    Laravel 8 ACL
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -192,18 +194,6 @@
   <li class="md-nav__item">
     <a href="../installation/" class="md-nav__link">
       Instalação
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../bootstrap/" class="md-nav__link">
-      Bootstrap
     </a>
   </li>
 
@@ -540,24 +530,22 @@
                 <h1 id="provider">Provider</h1>
 <p>A definição das tags customizadas do blade surgiu no provider abaixo</p>
 <h3 id="usando-nas-blades">Usando nas blades</h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="p">@</span><span class="n">role</span>
+<table class="blade codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="blade codehilite"><pre><span></span><code><span class="p">@</span><span class="n">role</span>
 <span class="p">@</span><span class="n">endrole</span>
 </code></pre></div>
 </td></tr></table>
-
 <p>Que deverão ser usadas nas blades</p>
 <h3 id="para-uso-nos-controllers-e-routes-temos">Para uso nos controllers e routes temos:</h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="php codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="x">- super:role</span>
+3</pre></div></td><td class="code"><div class="php codehilite"><pre><span></span><code><span class="x">- super:role</span>
 <span class="x">- admin:role</span>
 <span class="x">- etc</span>
 </code></pre></div>
 </td></tr></table>
-
 <h2 id="nosso-provider">Nosso provider</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="php codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -594,7 +582,7 @@
 35
 36
 37
-38</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="cp">&lt;?php</span>
+38</pre></div></td><td class="code"><div class="php codehilite"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="k">namespace</span> <span class="nx">App\Providers</span><span class="p">;</span>
 
 <span class="k">use</span> <span class="nx">App\Models\Permission</span><span class="p">;</span>
@@ -634,16 +622,15 @@
 <span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
-
 <h2 id="para-proteger-as-rotas">Para proteger as rotas</h2>
 <p>Testar o middleware com</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="php codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
 5
 6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="x">- role:super</span>
+7</pre></div></td><td class="code"><div class="php codehilite"><pre><span></span><code><span class="x">- role:super</span>
 <span class="x">- role:admin</span>
 <span class="x">- etc</span>
 
@@ -652,9 +639,8 @@
 <span class="x">});</span>
 </code></pre></div>
 </td></tr></table>
-
 <h2 id="outro-exemplo">Outro exemplo</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="php codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -697,7 +683,7 @@
 41
 42
 43
-44</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="x">Route::middleware([&#39;auth:sanctum&#39;, &#39;verified&#39;])-&gt;get(&#39;/dashboard&#39;, function () {</span>
+44</pre></div></td><td class="code"><div class="php codehilite"><pre><span></span><code><span class="x">Route::middleware([&#39;auth:sanctum&#39;, &#39;verified&#39;])-&gt;get(&#39;/dashboard&#39;, function () {</span>
 <span class="x">    $super = (Auth::user()-&gt;hasRole(&#39;super&#39;));</span>
 <span class="x">    $admin = (Auth::user()-&gt;hasRole(&#39;admin&#39;));</span>
 <span class="x">    $manager = (Auth::user()-&gt;hasRole(&#39;manager&#39;));</span>
@@ -796,6 +782,10 @@
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Inteiramente livre
+          </div>
         
         Made with
         <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">

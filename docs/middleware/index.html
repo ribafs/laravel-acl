@@ -19,7 +19,7 @@
     
     
       
-        <title>Middleware - ACL to Laravel 8</title>
+        <title>Middleware - Laravel 8 ACL</title>
       
     
     
@@ -44,6 +44,8 @@
       
     
     
+    
+      <link rel="stylesheet" href="../css/extra.css">
     
     
       
@@ -77,7 +79,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="https://ribafs.github.io/" title="ACL to Laravel 8" class="md-header-nav__button md-logo" aria-label="ACL to Laravel 8">
+    <a href="https://ribafs.github.io/" title="Laravel 8 ACL" class="md-header-nav__button md-logo" aria-label="Laravel 8 ACL">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -90,7 +92,7 @@
       
         <div class="md-header-nav__ellipsis">
           <span class="md-header-nav__topic md-ellipsis">
-            ACL to Laravel 8
+            Laravel 8 ACL
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
@@ -149,13 +151,13 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://ribafs.github.io/" title="ACL to Laravel 8" class="md-nav__button md-logo" aria-label="ACL to Laravel 8">
+    <a href="https://ribafs.github.io/" title="Laravel 8 ACL" class="md-nav__button md-logo" aria-label="Laravel 8 ACL">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    ACL to Laravel 8
+    Laravel 8 ACL
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -192,18 +194,6 @@
   <li class="md-nav__item">
     <a href="../installation/" class="md-nav__link">
       Instalação
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../bootstrap/" class="md-nav__link">
-      Bootstrap
     </a>
   </li>
 
@@ -497,7 +487,7 @@
                 
                 <h1 id="middleware-rolemiddleware">Middleware RoleMiddleware</h1>
 <p>Este é o middleware usado.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<table class="php codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -526,7 +516,7 @@
 27
 28
 29
-30</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="cp">&lt;?php</span>
+30</pre></div></td><td class="code"><div class="php codehilite"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="k">namespace</span> <span class="nx">App\Http\Middleware</span><span class="p">;</span>
 
 <span class="k">use</span> <span class="nx">Closure</span><span class="p">;</span>
@@ -558,16 +548,15 @@
 <span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
-
 <h2 id="metodo-canpermission">Método can($permission)</h2>
 <p>Aqui nasce nosso método can($permission), que pode ser usado nos actions dos controller, para controlar o acesso pelo slug da permission</p>
 <h2 id="usando">Usando</h2>
 <p>Testar de o usuário logado pode usar a permissão all-all</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<table class="php codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="x">    public function index(Request $request){</span>
+5</pre></div></td><td class="code"><div class="php codehilite"><pre><span></span><code><span class="x">    public function index(Request $request){</span>
 <span class="x">        if ($request-&gt;user()-&gt;can(&#39;all-all&#39;)) {</span>
 <span class="x">            return &#39;Seja muito bem vindo seu Super&#39;;</span>
 <span class="x">        }</span>
@@ -627,6 +616,10 @@
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Inteiramente livre
+          </div>
         
         Made with
         <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
