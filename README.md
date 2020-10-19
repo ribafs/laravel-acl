@@ -117,6 +117,13 @@ Se deseja um pacote para usar com a versão 7 do laravel, clique abaixo:
 
 [https://github.com/ribafs/laravel7-acl](https://github.com/ribafs/laravel7-acl)
 
+## Versão para o Laravel 5.8
+
+Se deseja um pacote para usar com a versão 5.8 do laravel, clique abaixo:
+
+[https://github.com/ribafs/laravel58-acl](https://github.com/ribafs/laravel58-acl)
+
+
 ## Demo online
 
 Caso queira ver um demom de aplicativo usando o pacote ribafs/laravel-acl, acesse:
