@@ -596,7 +596,7 @@
                 <h1 id="instalacao-do-laravel-acl">Instalação do laravel-acl</h1>
 <h2 id="crie-um-novo-aplicativo-com-laravel-8-para-testar-o-pacote">Crie um novo aplicativo com laravel 8 para testar o pacote</h2>
 <p>laravel new acl --jet --stack=livewire</p>
-<p>no</p>
+<p>[no]</p>
 <p>cd acl</p>
 <h3 id="criar-e-configurar-o-banco">Criar e configurar o banco</h3>
 <p>.env</p>
@@ -608,7 +608,6 @@
 <table class="bash codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="bash codehilite"><pre><span></span><code>php artisan vendor:publish --provider<span class="o">=</span><span class="s2">&quot;Ribafs\LaravelAcl\LaravelAclServiceProvider&quot;</span>
 </code></pre></div>
 </td></tr></table>
-<p>Agora todos os arquivos do pacote já estão em seu aplicativo: migrations, seeders, Models, middleware, provider, etc</p>
 <h2 id="copiar-alguns-arquivos-existentes">Copiar alguns arquivos existentes</h2>
 <p>Como este pacote não sobrescreve arquivos existestes, então você precisará executar o comando copy:files (veja abaixo) para copiar sobrescrevendo os arquivos abaixo:</p>
 <ul>
@@ -622,6 +621,7 @@
 <table class="bash codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="bash codehilite"><pre><span></span><code>php artisan copy:files
 </code></pre></div>
 </td></tr></table>
+<p>Agora todos os arquivos do pacote já estão em seu aplicativo: migrations, seeders, Models, middleware, provider, etc</p>
 <h3 id="ajustar-o-titulo-do-aplicativo-opcional">Ajustar o título do aplicativo (opcional)</h3>
 <p>Editar o .env e mudar a linha com APP_NAME, para algo como: APP_NAME='ACL to Laravel 8'</p>
 <h2 id="executar_1">Executar</h2>
@@ -635,7 +635,7 @@ localhost:8000/login
 </td></tr></table>
 <p>Use como exemplo:</p>
 <ul>
-<li>super@gmail.com</li>
+<li>super@mail.org</li>
 <li>123456</li>
 </ul>
 <p>Depois teste com os demais: admin, manager e user</p>

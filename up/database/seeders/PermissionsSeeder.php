@@ -123,7 +123,7 @@ class PermissionsSeeder extends Seeder
         // Cadastrar o user Super no banco e anexar a ele sua(s) respectiva(s) role(s) e permission(s)
         $super = new User();
         $super->name = 'Super user';
-        $super->email = 'super@gmail.com';
+        $super->email = 'super@mail.org';
         $super->password = bcrypt('123456');
         $super->save();
         $super->roles()->attach($super_role); // Esta role precisa existir em 'roles' para que seja adequadamente anexada
@@ -132,7 +132,7 @@ class PermissionsSeeder extends Seeder
         // Cadastrar o user Admin no banco e anexar a ele sua(s) respectiva(s) role(s) e permission(s)
         $admin = new User();
         $admin->name = 'Admin user';
-        $admin->email = 'admin@gmail.com';
+        $admin->email = 'admin@mail.org';
         $admin->password = bcrypt('123456');
         $admin->save();
         $admin->roles()->attach($admin_role);
@@ -143,7 +143,7 @@ class PermissionsSeeder extends Seeder
         // Cadastrar o user Manager no banco e anexar a ele sua(s) respectiva(s) role(s) e permission(s)
         $manager = new User();
         $manager->name = 'Manager user';
-        $manager->email = 'manager@gmail.com';
+        $manager->email = 'manager@mail.org';
         $manager->password = bcrypt('123456');
         $manager->save();
         $manager->roles()->attach($manager_role);
@@ -153,7 +153,7 @@ class PermissionsSeeder extends Seeder
         // Cadastrar o user User no banco e anexar a ele sua(s) respectiva(s) role(s) e permission(s)
         $user = new User();
         $user->name = 'User user';
-        $user->email = 'user@gmail.com';
+        $user->email = 'user@mail.org';
         $user->password = bcrypt('123456');
         $user->save();
         $user->roles()->attach($user_role);
