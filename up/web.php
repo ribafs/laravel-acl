@@ -2,6 +2,8 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
+Route::resource('public', 'App\Http\Controllers\ClientController');
+
 Route::get('/', function () {
     return view('welcome');
 });
