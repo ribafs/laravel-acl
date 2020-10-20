@@ -88,13 +88,7 @@ Se deseja um pacote para usar com a versão 5.8 do laravel, clique abaixo:
 
 [https://github.com/ribafs/laravel58-acl](https://github.com/ribafs/laravel58-acl)
 
+## License
 
-## Demo online
-
-Caso queira ver um demom de aplicativo usando o pacote ribafs/laravel-acl, acesse:
-
-http://159.89.22.33/laravel/public/
-
-=======
 MIT
->>>>>>> 5f3c2aa6f649fd9b29c0e2a3466509dc5c309fb0
+
