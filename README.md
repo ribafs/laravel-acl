@@ -34,7 +34,7 @@ php artisan vendor:publish --provider="Ribafs\LaravelAcl\LaravelAclServiceProvid
 - views/welcome.blade.php
 - views/layouts/app.blade.php
 
-### Executar
+### Copiar arquivos
 ```bash
 php artisan copy:files
 ```
@@ -43,7 +43,7 @@ Agora todos os arquivos do pacote já estão em seu aplicativo: migrations, seed
 ### Ajustar o título do aplicativo (opcional)
 Editar o .env e mudar a linha com APP_NAME, para algo como: APP_NAME='ACL to Laravel 8'
 
-## Executar
+## Testar
 
 Após adicionar seu CRUD, execute e teste o ACL no controle do acesso do seu aplicativo.
 ```bash
@@ -66,12 +66,17 @@ As informações acima e muito mais informações de como tirar o máximo provei
 
 ## Licença
 
-<<<<<<< HEAD
-## Pacote exclusivo para a versão 7 do laravel
+## Versão para laravel 7
 
 Se deseja um pacote para usar com a versão 7 do laravel, clique abaixo:
 
 [https://github.com/ribafs/laravel7-acl](https://github.com/ribafs/laravel7-acl)
+
+## Versão para laravel 6
+
+Se deseja um pacote para usar com a versão 6 do laravel, clique abaixo:
+
+[https://github.com/ribafs/laravel6-acl](https://github.com/ribafs/laravel6-acl)
 
 ## Versão para o Laravel 5.8
 
