@@ -595,8 +595,22 @@
                 
                 <h1 id="instalacao-do-laravel-acl">Instalação do laravel-acl</h1>
 <h2 id="crie-um-novo-aplicativo-com-laravel-8-para-testar-o-pacote">Crie um novo aplicativo com laravel 8 para testar o pacote</h2>
-<p>laravel new acl --jet --stack=livewire</p>
-<p>[no]</p>
+<table class="bash codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="bash codehilite"><pre><span></span><code>composer create-project --prefer-dist laravel/laravel blog
+composer require laravel/jetstream
+php artisan jetstream:install livewire
+
+Se tiver o installer <span class="k">do</span> <span class="m">8</span> basta:
+
+laravel new acl --jet --stack<span class="o">=</span>livewire
+</code></pre></div>
+</td></tr></table>
+<p>[no] Tecle Enter</p>
 <p>cd acl</p>
 <h3 id="criar-e-configurar-o-banco">Criar e configurar o banco</h3>
 <p>.env</p>
