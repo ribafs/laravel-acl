@@ -5,6 +5,10 @@ Usando users, roles, permissions, trait, middleware, provider, etc
 - Windows 7
 - Linux Mint 20
 
+## Novidade da versão 2.0
+
+Agora temos duas áreas, pública e administrativa. Ao entrar no raiz do aplicativo poderá acessar a listagem de clients e o show. Após o login terá direitos de acordo com o usuário.
+
 ## Criar um novo aplicativo com laravel 8
 ```bash
 laravel new acl --jet --stack=livewire
