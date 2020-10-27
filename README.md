@@ -101,7 +101,7 @@ Assim não precisa mexer nas views.
 
 Se deseja um pacote para usar com a versão 7 do laravel, clique abaixo:
 
-[https://github.com/ribafs/laravel7-acl](https://github.com/ribafs/laravel7-acl)
+[https://github.com/ribafs/laravel-acl-exist](https://github.com/ribafs/laravel-acl-exist)
 
 ## Versão para laravel 7
 
