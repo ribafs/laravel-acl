@@ -11,7 +11,8 @@ Agora temos duas áreas, pública e administrativa. Ao entrar no raiz do aplicat
 
 ## Criar um novo aplicativo com laravel 8
 ```bash
-laravel new acl --jet --stack=livewire
+laravel new acl --jet --teams --stack=livewire
+npm install && npm run dev
 ```
 Tecle enter quando aparecer [no]
 ```bash
@@ -68,7 +69,40 @@ As informações acima e muito mais informações de como tirar o máximo provei
 
 [https://ribafs.github.io/laravel-acl](https://ribafs.github.io/laravel-acl)
 
-## Licença
+## Criação de um app demo com ribafs/laravel-acl
+
+Criar uma permissão que nenhum user tem (exemplo)
+```bash
+all-no
+
+php artisan add:perm 'No perms' all-no 
+```
+
+E atribuir para todas as views que não desejo acesso
+```bash
+@can('all-no')
+```
+Nos actions
+```bash
+    public function create(Request $request)
+    {
+        if ($request->user()->can('all-no')) {
+            return view('admin.clients.create');
+        }else{
+            print '<a href="#" onClick="window.history.back();">Back to app</a>';
+            return '<h3 align="center">Access denied in this demo</h3>';
+        }
+    }
+```
+Restringir nos actions para somente os que tem a permissão all-no, que nenhum user tem.
+
+Assim não precisa mexer nas views.
+
+## Versão para laravel 8 com aplicativos existentes
+
+Se deseja um pacote para usar com a versão 7 do laravel, clique abaixo:
+
+[https://github.com/ribafs/laravel-acl-exist](https://github.com/ribafs/laravel-acl-exist)
 
 ## Versão para laravel 7
 
@@ -88,13 +122,7 @@ Se deseja um pacote para usar com a versão 5.8 do laravel, clique abaixo:
 
 [https://github.com/ribafs/laravel58-acl](https://github.com/ribafs/laravel58-acl)
 
+## License
 
-## Demo online
-
-Caso queira ver um demom de aplicativo usando o pacote ribafs/laravel-acl, acesse:
-
-http://159.89.22.33/laravel/public/
-
-=======
 MIT
->>>>>>> 5f3c2aa6f649fd9b29c0e2a3466509dc5c309fb0
+
