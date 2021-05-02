@@ -11,7 +11,7 @@ Agora temos duas áreas, pública e administrativa. Ao entrar no raiz do aplicat
 
 ## Criar um novo aplicativo com laravel 8
 ```bash
-laravel new acl --jet --stack=livewire
+laravel new acl --jet --teams --stack=livewire
 npm install && npm run dev
 ```
 Tecle enter quando aparecer [no]
