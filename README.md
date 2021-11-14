@@ -58,7 +58,7 @@ localhost:8000/login
 ```
 Use como exemplo:
 
-- super@gmail.com
+- super@mail.org
 - 123456
 
 Depois teste com os demais: admin, manager e user
