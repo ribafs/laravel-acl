@@ -60,6 +60,10 @@ Use como exemplo:
 
 Depois teste com os demais: admin, manager e user
 
+## Importante
+
+Este pacote é indicado para novos aplicativos. Evite usá-lo em aplicativos existentes, pois ele pode sobrescrever alguns arquivos.
+
 ## Documentação com mais detalhes
 
 As informações acima e muito mais informações de como tirar o máximo proveito deste pacote:
