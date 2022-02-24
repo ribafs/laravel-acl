@@ -2,7 +2,7 @@
 Usando users, roles, permissions, trait, middleware, provider, etc
 
 ## Testado em
-- Windows 7
+- Windows 7 e 10
 - Linux Mint 20
 
 ## Novidade da versão 2.0
