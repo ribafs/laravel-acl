@@ -10,9 +10,19 @@ Usando users, roles, permissions, trait, middleware, provider, etc
 Agora temos duas áreas, pública e administrativa. Ao entrar no raiz do aplicativo poderá acessar a listagem de clients e o show. Após o login terá direitos de acordo com o usuário.
 
 ## Criar um novo aplicativo com com nome 'acl' no laravel 8
+Caso tenha o laravel installer, use:
+
 ```bash
 laravel new acl --jet --teams --stack=livewire
 cd acl
+npm install && npm run dev
+```
+Caso nãoa tenha, use:
+```
+composer create-project --prefer-dist laravel/laravel acl
+cd acl
+composer require laravel/jetstream
+php artisan jetstream:install livewire
 npm install && npm run dev
 ```
 
