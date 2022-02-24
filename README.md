@@ -17,7 +17,7 @@ laravel new acl --jet --teams --stack=livewire
 cd acl
 npm install && npm run dev
 ```
-Caso nãoa tenha, use:
+Caso não tenha, use:
 ```
 composer create-project --prefer-dist laravel/laravel acl
 cd acl
