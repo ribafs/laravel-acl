@@ -1,6 +1,13 @@
 # Implementação de ACL no Laravel 8
 Usando users, roles, permissions, trait, middleware, provider, etc
 
+## Como funciona?
+O usuário 'super' tem acesso a todas as tabelas e pode fazer tudo em cada uma delas. 
+O usuário 'admin' tem acesso somente as tabelas permissions, roles e users e pode fazer tudo com elas.
+O usuário 'manager' tem acesso somente a tabela clientes e pode tudo somente com ela.
+O usuário 'user', tem acesso somente a view index de clientes.
+Faça login com cade usuário para experimentar.
+
 ## Testado em
 - Windows 7 e 10
 - Linux Mint 20
