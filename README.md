@@ -116,6 +116,9 @@ Restringir nos actions para somente os que tem a permissão all-no, que nenhum u
 
 Assim não precisa mexer nas views.
 
+## Documentação deste projeto
+https://ribafs.github.io/laravel-acl/
+
 ## Versão para laravel 8 com aplicativos existentes
 
 Se deseja um pacote para usar com a versão 7 do laravel, clique abaixo:
