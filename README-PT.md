@@ -153,6 +153,13 @@ Se deseja um pacote para usar com a versão 5.8 do laravel, clique abaixo:
 
 [https://github.com/ribafs/laravel58-acl](https://github.com/ribafs/laravel58-acl)
 
+## Trocar ideias
+
+Para trocar ideias de forma ágil:
+
+https://github.com/ribafs/laravel-acl/discussions/
+
+
 ## Licença
 
 MIT
