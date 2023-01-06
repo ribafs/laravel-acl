@@ -1,4 +1,4 @@
-# Implementação de ACL no Laravel 8
+# Implementação de ACL no Laravel 9
 Usando users, roles, permissions, trait, middleware, provider, etc
 
 ## Como funciona?
@@ -70,6 +70,19 @@ php artisan migrate --seed
 php artisan serve
 localhost:8000/login
 ```
+
+## Caso receba o erro
+
+Target class [Fruitcake\Cors\HandleCors] does not ...
+
+Então edite
+
+app/Http/Kernel.php
+
+E comente a linha:
+
+        //\Fruitcake\Cors\HandleCors::class,
+
 Use como exemplo:
 
 - super@mail.org
