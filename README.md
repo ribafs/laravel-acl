@@ -1,4 +1,9 @@
 # Implementação de ACL no Laravel 9
+
+## Suporte ao Laravel 9
+
+Acabo de atualizar para o Laravel 9
+
 Usando users, roles, permissions, trait, middleware, provider, etc
 
 ## Como funciona?
