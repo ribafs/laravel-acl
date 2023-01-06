@@ -1,35 +1,40 @@
-# Implementação de ACL no Laravel 9
+# ACL implementation in Laravel 9
 
-## Suporte ao Laravel 9
+## Portuguese version this README
 
-Acabo de atualizar para o Laravel 9
+[README-PT](README-PT.md)
 
-Usando users, roles, permissions, trait, middleware, provider, etc
+## Support to laravel 9
 
-## Como funciona?
-O usuário 'super' tem acesso a todas as tabelas e pode fazer tudo em cada uma delas. 
-O usuário 'admin' tem acesso somente as tabelas permissions, roles e users e pode fazer tudo com elas.
-O usuário 'manager' tem acesso somente a tabela clientes e pode tudo somente com ela.
-O usuário 'user', tem acesso somente a view index de clientes.
-Faça login com cade usuário para experimentar.
+Using users, roles, permissions, trait, middleware, provider, etc
 
-## Testado em
-- Windows 7 e 10
-- Linux Mint 20
+## How to works?
+User 'super' has access to all tables and can do everything in each one.
+User 'admin' only has access to the permissions, roles and users tables and can do everything with them.
+User 'manager' only has access to the customer table and can do everything with it.
+The 'user' user has access only to the clients' index view.
 
-## Novidade da versão 2.0
+Log in with each user to try it out.
 
-Agora temos duas áreas, pública e administrativa. Ao entrar no raiz do aplicativo poderá acessar a listagem de clients e o show. Após o login terá direitos de acordo com o usuário.
+## Tested with
 
-## Criar um novo aplicativo com com nome 'acl' no laravel 8
-Caso tenha o laravel installer, use:
+- Windows 7 and 10
+- Linux Mint 20 and 21
+
+## News in version 2.0
+
+Now we have two areas, public and administrative. When entering the root of the application, you will be able to access the list of clients and the show. After login you will have rights according to the user.
+
+## Create a new app named 'acl' in laravel 9
+
+If you have laravel installer, use:
 
 ```bash
 laravel new acl --jet --teams --stack=livewire
 cd acl
 npm install && npm run dev
 ```
-Caso não tenha, use:
+If not, use:
 ```
 composer create-project --prefer-dist laravel/laravel acl
 cd acl
@@ -38,87 +43,98 @@ php artisan jetstream:install livewire
 npm install && npm run dev
 ```
 
-### Criar e configurar o banco
-.env
+### Create and configure the database
+
+nano .env
 
 
-## Instalar o laravel-acl
+## Install the laravel-acl
+
 ```bash
 composer require ribafs/laravel-acl
 ```
 
-## Publicar
+## Publishe
+
 ```bash
 php artisan vendor:publish --provider="Ribafs\LaravelAcl\LaravelAclServiceProvider"
 ```
-## Copiar alguns arquivos existentes
+## Copy some existing files
 
 - DatabaseSeeder.php
 - routes/web.php
 - views/welcome.blade.php
 - views/layouts/app.blade.php
 
-### Copiar arquivos
+### Copy files
+
 ```bash
 php artisan copy:files
 ```
-Agora todos os arquivos do pacote já estão em seu aplicativo: migrations, seeders, Models, middleware, provider, etc
+Now all package files are already in your application: migrations, seeders, Models, middleware, provider, etc
 
-### Ajustar o título do aplicativo (opcional)
-Editar o .env e mudar a linha com APP_NAME, para algo como: APP_NAME='ACL to Laravel 8'
+### Adjust app title (optional)
 
-## Testar
+Edit the .env and change the line with APP_NAME, to something like: APP_NAME='ACL to Laravel 9'
 
-Após adicionar seu CRUD, execute e teste o ACL no controle do acesso do seu aplicativo.
+## Try
+
+After adding your CRUD, run and test the ACL on your application's access control.
+
 ```bash
 php artisan migrate --seed
 php artisan serve
 localhost:8000/login
 ```
 
-## Caso receba o erro
+## If you receive the error
 
+```
 Target class [Fruitcake\Cors\HandleCors] does not ...
+```
 
-Então edite
+Then edit
 
 app/Http/Kernel.php
 
-E comente a linha:
+And comment out the line:
 
         //\Fruitcake\Cors\HandleCors::class,
 
-Use como exemplo:
+Use to test:
 
 - super@mail.org
 - 123456
 
-Depois teste com os demais: admin, manager e user
+Then test with the others: admin, manager and user
 
-## Importante
+## Important
 
-Este pacote é indicado para novos aplicativos. Evite usá-lo em aplicativos existentes, pois ele pode sobrescrever alguns arquivos.
+This package is intended for new applications. Avoid using it in existing applications as it may overwrite some files.
 
-## Documentação com mais detalhes
+## Documentation in more detail
 
-As informações acima e muito mais informações de como tirar o máximo proveito deste pacote:
+The information above and much more information on how to get the most out of this package (English only for now):
 
 [https://ribafs.github.io/laravel-acl](https://ribafs.github.io/laravel-acl)
 
-## Criação de um app demo com ribafs/laravel-acl
+## How to creating a demo app with ribafs/laravel-acl
 
-Criar uma permissão que nenhum user tem (exemplo)
+Create a permission that no user has (example)
+
 ```bash
 all-no
 
 php artisan add:perm 'No perms' all-no 
 ```
 
-E atribuir para todas as views que não desejo acesso
+And assign to all views I don't want access to
+
 ```bash
 @can('all-no')
 ```
-Nos actions
+On actions
+
 ```bash
     public function create(Request $request)
     {
@@ -130,39 +146,34 @@ Nos actions
         }
     }
 ```
-Restringir nos actions para somente os que tem a permissão all-no, que nenhum user tem.
+Restrict actions to only those that have all-no permission, which no user has.
 
-Assim não precisa mexer nas views.
+So you don't need to change the views.
 
-## Documentação detalhada deste projeto
+## Version for laravel 8 with existing apps
 
-https://ribafs.github.io/laravel-acl/
-
-## Versão para laravel 8 com aplicativos existentes
-
-Se deseja um pacote para usar com a versão 7 do laravel, clique abaixo:
+If you want a package to use with version 7 of laravel, click below:
 
 [https://github.com/ribafs/laravel-acl-exist](https://github.com/ribafs/laravel-acl-exist)
 
-## Versão para laravel 7
+## Version for laravel 7
 
-Se deseja um pacote para usar com a versão 7 do laravel, clique abaixo:
+If you want a package to use with version 7 of laravel, click below:
 
 [https://github.com/ribafs/laravel7-acl](https://github.com/ribafs/laravel7-acl)
 
-## Versão para laravel 6
+## Version for laravel 6
 
-Se deseja um pacote para usar com a versão 6 do laravel, clique abaixo:
+If you want a package to use with laravel version 6, click below:
 
 [https://github.com/ribafs/laravel6-acl](https://github.com/ribafs/laravel6-acl)
 
-## Versão para o Laravel 5.8
+## Version for Laravel 5.8
 
-Se deseja um pacote para usar com a versão 5.8 do laravel, clique abaixo:
+If you want a package to use with laravel version 5.8, click below:
 
 [https://github.com/ribafs/laravel58-acl](https://github.com/ribafs/laravel58-acl)
 
 ## License
 
 MIT
-
