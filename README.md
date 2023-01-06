@@ -174,6 +174,10 @@ If you want a package to use with laravel version 5.8, click below:
 
 [https://github.com/ribafs/laravel58-acl](https://github.com/ribafs/laravel58-acl)
 
+To quickly exchange ideas
+
+https://github.com/ribafs/laravel-acl/discussions/
+
 ## License
 
 MIT
