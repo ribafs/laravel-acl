@@ -36,7 +36,7 @@ npm install && npm run dev
 ```
 If not, use:
 ```
-composer create-project --prefer-dist laravel/laravel acl
+composer create-project --prefer-dist laravel/laravel acl "9.5.2"
 cd acl
 composer require laravel/jetstream
 php artisan jetstream:install livewire
