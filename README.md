@@ -1,10 +1,12 @@
-# ACL implementation in Laravel 9
+# ACL implementation in Laravel 9 and 10
 
 ## Portuguese version this README
 
 [README-PT](README-PT.md)
 
-## Support to laravel 9
+## Support to laravel 9 and 10
+
+Alto 8 versiom without try.
 
 Using users, roles, permissions, trait, middleware, provider, etc
 
