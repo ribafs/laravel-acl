@@ -37,6 +37,8 @@ cd acl
 npm install && npm run dev
 ```
 If not, use:
+
+composer create-project --prefer-dist laravel/laravel acl - laravel 10
 ```
 composer create-project --prefer-dist laravel/laravel acl "9.5.2"
 cd acl
