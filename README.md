@@ -36,9 +36,11 @@ laravel new acl --jet --teams --stack=livewire
 cd acl
 npm install && npm run dev
 ```
-If not, use:
+If not, for laravel 10:
 
-composer create-project --prefer-dist laravel/laravel acl - laravel 10
+composer create-project --prefer-dist laravel/laravel acl
+
+For laravel 9:
 ```
 composer create-project --prefer-dist laravel/laravel acl "9.5.2"
 cd acl
