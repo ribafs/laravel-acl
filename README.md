@@ -43,6 +43,7 @@ composer create-project --prefer-dist laravel/laravel acl
 For laravel 9:
 ```
 composer create-project --prefer-dist laravel/laravel acl "9.5.2"
+
 cd acl
 composer require laravel/jetstream
 php artisan jetstream:install livewire
